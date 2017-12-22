@@ -1,10 +1,10 @@
-### 14/12/2017
+## 14/12/2017
 
 This week we did not have a meeting since Dr. Kiayias was not in town. The topics of the
 day were UC-Trust, LocalChains and the [Whose data is it
 anyway?](https://www.whosedataisitanyway.com/) discussion sessions.
 
-#### UC-Trust
+### UC-Trust
 
 I have described the "Trust" oracle, which takes as input:
 1. a desire,
@@ -18,7 +18,7 @@ and outputs:
 
 Maybe this oracle should be called "market research".
 
-#### LocalChains
+### LocalChains
 
 I have read most of [PERUN](https://eprint.iacr.org/2017/635.pdf).  The relevant part for
 us is the way that a virtual payment channel between **Alice** and **Bob** can be created
@@ -35,7 +35,7 @@ the last resort for **Bob** if both **Ingrid** and **Alice** are malicious. A hi
 description of a virtual can be found at p. 45, with a more detailed exposition at pp.
 47-52, which also include most of the relevant protocols and contract functions.
 
-#### Whose data is it anyway?
+### Whose data is it anyway?
 
 Lastly, I attended the [Whose data is it anyway?](https://www.whosedataisitanyway.com/)
 event, where I learned about the new "open banking" regulations that will be put in effect
@@ -47,7 +47,7 @@ standardized API and protecting individuals' privacy seem contradictory, so the 
 of trust and privacy were discussed to some extent, however without any noteworthy
 arguments.
 
-### 7/12/2017
+## 7/12/2017
 
 This week we briefly discussed about the form the [satisfaction
 functionality](https://github.com/OrfeasLitos/UC-Trust/blob/master/what_is_trust/algorithms/satfunc.tex)
