@@ -1,3 +1,20 @@
+## 21/12/2017
+
+This week we did not have a meeting since Dr. Kiayias was not in town. The topic of this
+week was the overview of payment channels. More specifically, I have finished reading
+[PERUN](https://eprint.iacr.org/2017/635.pdf) and wrote a summary of its functions. I then
+proceeded to read [Lightning
+Network](https://lightning.network/lightning-network-paper.pdf) and to write a summary for
+it as well. This procedure is not complete for the latter paper, but the basic use case is
+almost described. The next paper to review is
+[Teechan](https://arxiv.org/pdf/1612.07766.pdf).
+
+As a first impression, I believe that the strategies employed by these papers do not fit
+well with the approach required by
+[LocalChains](https://github.com/OrfeasLitos/LocalChains/blob/master/localchains.pdf), but
+may give the necessary starting point to build upon. Further research is required to find
+a suitable model.
+
 ## 14/12/2017
 
 This week we did not have a meeting since Dr. Kiayias was not in town. The topics of the
