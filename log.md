@@ -1,3 +1,7 @@
+## 28/12/2017
+
+Christmas break
+
 ## 21/12/2017
 
 This week we did not have a meeting since Dr. Kiayias was not in town. The topic of this
