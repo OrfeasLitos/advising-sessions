@@ -1,3 +1,34 @@
+## 12/1/2018
+
+### UC-Trust
+
+This week we held the first meeting of the year with Dr. Kiayias, in person. We explored in
+more detail how the mechanism for the Protocol and the Satisfaction Functionality can work
+in a reasonable way while staying compatible with one another. We managed to push important
+decisions (where the alternative would be the use of a utility function) to the
+Environment. We determined to give substantial flexibility to the Functionality in order to
+avoid making it too perfect for any Protocol to correctly simulate it. We also introduced
+the Adversary.
+
+The messages the Environment can now send to or receive from a player are the following:
+1. Environment → Alice: "Satisfy desire d through a player in list L" (maybe the list is
+redundant)
+2. Environment → Bob: "Obtain and advertise the ability to satisfy desire d in exchange for
+value x"
+3. Alice → Environment: "Payment x sent to player Bob for desire d"
+4. Environment → Bob: "Fully satisfy Alice's desire d" or "Send inferior good to Alice for
+her desire d" or "Take no action upon Alice's payment x for her desire d"
+5. Alice → Environment: "Bob fully satisfied my desire d" or "Bob sent an inferior good for
+my desire d" or "Bob did not take any action upon payment x for my desire d"
+6. Environment → Alice: "Increase your direct trust towards Bob by x" or 
+7. Environment → Alice: "Decrease your direct trust towards Bob by x"
+8. Environment → Bob: "Steal x from Alice's direct trust"
+
+As we have determined earlier, the Satisfaction Functionality does not need any trust
+semantics, therefore the last two messages are simply forwarded to the Simulator (which
+contains the Adversary). The Simulator (or the player who received the message in the case
+of the real Protocol) updates the Ledger Functionality accordingly.
+
 ## 31/12/2017
 
 ### UC-Trust: Thoughts on player and trust definitions
