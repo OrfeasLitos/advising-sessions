@@ -20,7 +20,7 @@ value x"
 her desire d" or "Take no action upon Alice's payment x for her desire d"
 5. Alice → Environment: "Bob fully satisfied my desire d" or "Bob sent an inferior good for
 my desire d" or "Bob did not take any action upon payment x for my desire d"
-6. Environment → Alice: "Increase your direct trust towards Bob by x" or 
+6. Environment → Alice: "Increase your direct trust towards Bob by x" or
 7. Environment → Alice: "Decrease your direct trust towards Bob by x"
 8. Environment → Bob: "Steal x from Alice's direct trust"
 
