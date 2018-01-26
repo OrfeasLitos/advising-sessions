@@ -37,14 +37,14 @@ the Adversary.
 
 The messages the Environment can now send to or receive from a player are the following:
 1. Environment → Alice: "Satisfy desire d through a player in list L" (maybe the list is
-redundant)
-2. Environment → Bob: "Obtain and advertise the ability to satisfy desire d in exchange for
-value x"
+   redundant)
+2. Environment → Bob: "Obtain and advertise the ability to satisfy desire d in exchange
+   for value x"
 3. Alice → Environment: "Payment x sent to player Bob for desire d"
 4. Environment → Bob: "Fully satisfy Alice's desire d" or "Send inferior good to Alice for
-her desire d" or "Take no action upon Alice's payment x for her desire d"
-5. Alice → Environment: "Bob fully satisfied my desire d" or "Bob sent an inferior good for
-my desire d" or "Bob did not take any action upon payment x for my desire d"
+   her desire d" or "Take no action upon Alice's payment x for her desire d"
+5. Alice → Environment: "Bob fully satisfied my desire d" or "Bob sent an inferior good
+   for my desire d" or "Bob did not take any action upon payment x for my desire d"
 6. Environment → Alice: "Increase your direct trust towards Bob by x" or
 7. Environment → Alice: "Decrease your direct trust towards Bob by x"
 8. Environment → Bob: "Steal x from Alice's direct trust"
@@ -60,27 +60,27 @@ of the real Protocol) updates the Ledger Functionality accordingly.
 
 Here are some ideas on how to describe the game in the case that the satisfaction
 functionality is missing.
-1. Player **Alice** is an ITM that tries to maximise a utility function, known only to her.
-All other players have their own utility functions, which are unknown to **Alice** (she may
-infer some things about them as the game is evolving though). The utility function depends
-on all the exchanged messages up to the present moment and the state **Alice** is in. It
-also depends on the amount of money **Alice** has; it is common knowledge that the utility
-function of any player is monotonically increasing with respect to the amount of tokens
-this player owns.
+1. Player **Alice** is an ITM that tries to maximise a utility function, known only to
+   her.  All other players have their own utility functions, which are unknown to
+   **Alice** (she may infer some things about them as the game is evolving though). The
+   utility function depends on all the exchanged messages up to the present moment and the
+   state **Alice** is in. It also depends on the amount of money **Alice** has; it is
+   common knowledge that the utility function of any player is monotonically increasing
+   with respect to the amount of tokens this player owns.
 2. As for the tokens, it holds that the sum of all tokens of all players is a function of
-time. This function is common knowledge. This is to ensure that money supply is
-independent of the decisions of individual players.
+   time. This function is common knowledge. This is to ensure that money supply is
+   independent of the decisions of individual players.
 3. Since she is rational, **Alice** will choose to pay some tokens to **Bob** when she
-expects that her utility will thus eventually increase more than in the case that she
-would keep the tokens. Put simply, **Alice** will choose to pay **Bob** when she has
-reason to believe that he will deliver a product or service which is worth for her more
-than the tokens spent.
+   expects that her utility will thus eventually increase more than in the case that she
+   would keep the tokens. Put simply, **Alice** will choose to pay **Bob** when she has
+   reason to believe that he will deliver a product or service which is worth for her more
+   than the tokens spent.
 4. We say that **Alice** is paying trustlessly when (at the moment of payment) she knows a
-strategy that, in case **Bob** tries to commit fraud, she is sure to recover her money. On
-the other hand, if she undertakes some risk due to lack of such a strategy, we say that
-**Alice** *trusts* **Bob**. More specifically, we say that **Alice** *trusts* **Bob** *X*
-tokens when **Alice** knows a strategy such that the maximum amount of tokens **Bob** can
-potentially steal from her is *X*.
+   strategy that, in case **Bob** tries to commit fraud, she is sure to recover her money.
+   On the other hand, if she undertakes some risk due to lack of such a strategy, we say
+   that **Alice** *trusts* **Bob**. More specifically, we say that **Alice** *trusts*
+   **Bob** *X* tokens when **Alice** knows a strategy such that the maximum amount of
+   tokens **Bob** can potentially steal from her is *X*.
 
 ## 28/12/2017
 
