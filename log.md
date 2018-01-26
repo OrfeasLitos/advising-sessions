@@ -1,3 +1,28 @@
+## 25/1/2018
+
+### UC-Trust
+
+This week, we focused on the protocol description between the players. We went over the
+pseudocode and several improvements were proposed:
+1. Avoid strict programmatic writing style and switch to a more natural language,
+   specifically for the responses to messages sent as part of a reaction to an earlier
+   message.
+2. Change the message sent to the Environment after a response to a payment has been
+   received (or the wait has timed out). Instead of sending "satisfied(desire, string,
+   seller)" or "partiallySatisfied(desire, string, seller)" it is better to return
+   "satisfied(desire, string, seller, additionalUtility)", so that there is a continuous
+   range of satisfaction levels instead of just three.
+3. Rewrite the F_SAT functionality to better integrate with the newly written protocol.
+   Furthermore, Dr. Kiayias proposed that we go over parts of some UC papers (e.g. the
+   [Canetti 2004 signature paper](https://eprint.iacr.org/2003/239.pdf)) to help me better
+   understand how and why things are proven.
+
+### Payment Channels literature overview
+
+I showed the progress on the review of the Lighning Network to Dr. Kiayias. We did not go
+into much detail, however he was satisfied by the overall structure. It is possible that
+this work will lead to a paper.
+
 ## 12/1/2018
 
 ### UC-Trust
