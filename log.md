@@ -1,3 +1,28 @@
+## 2/2/2018
+
+### UC-Trust
+
+This week we dedicated our entire meeting to figuring out the high-level overview of all
+the functionalities and protocols. Here is the description we decided upon:
+
+The Environment inputs to F_SAT a particular desire. F_SAT outputs either "satisfied" or
+"not satisfied".
+
+The realisation of F_SAT is Pi_SAT, which consults F_TRUST to decide who to ask for the
+satisfaction of the desire and decides which player is the best choice given a particular
+utility function. Then Pi_SAT inputs the asset to be bought, the player who sells it and
+the payment amount to F_TRADE, which returns either "payment failed" or ("payment went
+through" and ("asset received" or "asset not received")). F_TRADE does not have any
+utility semantics.
+
+Pi_TRADE is a rather simple "plumbing" protocol, which makes the payment with the help of
+F_LEDGER and changes the ownership of the asset with the help of F_ASSETS. F_LEDGER could
+be e.g. bitcoin backbone and F_ASSETS is a simple functionality that keeps track of
+asset ownership. F_ASSETS will remain without realisation.
+
+It is possible that F_SAT changes with respect to which F_TRUST is used by its
+corresponding Pi_SAT.
+
 ## 25/1/2018
 
 ### UC-Trust
