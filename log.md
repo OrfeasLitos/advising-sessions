@@ -1,3 +1,16 @@
+## 8/2/2018
+
+### UC-Trust
+
+This week the meeting was shorter than usual. Initially I gave a high-level explanation of
+the structure of and interaction between the various functionalities and protocols.
+Afterwards, I pointed out some core elements of each protocol and functionality.
+
+For F_TRADE and Pi_TRADE, Dr. Kiayias proposed no corrections. However, he proposed that
+access control be removed from F_ASSETS and substituted with a simple mechanism where a
+player can query ownership only for his own assets and not for other players' assets. For
+the next week I will have to write down F_TRUST.
+
 ## 2/2/2018
 
 ### UC-Trust
