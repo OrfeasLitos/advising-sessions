@@ -1,3 +1,32 @@
+## 22/2/2018
+
+### UC-Trust
+
+This week we reviewed for the first time the various functionalities and corresponding
+protocols. More precisely, of the functionalities F_SAT, F_Trust, F_Trade and F_Assets and
+the protocols Pi_SAT and Pi_Trade, we reviewed in detail F_SAT, Pi_SAT, F_Trust, F_Trade
+and Pi_Trade. More precisely, we resolved to make the following changes, ordered vaguely
+from most to least important:
+
+1. Give a description for the utility function, at least inputs and axioms/properties.
+   The inputs should consist of assets and money (money has the special property that is
+   monotone with the utility value and this is common knowledge), as well as the
+   "reputation" (its precise form remains to be seen, possibly something in the lines of
+   "the code of Pi_Trust").
+2. Work for a proof that if F_Trust is as described, no cheats ever happen. This will
+   serve as a sanity check for an ideal market, which however is unrealisable because of
+   the big powers of F_Trust.
+3. Instead of having F_SAT choosing the best possible seller (which is unrealisable),
+   have it create a list of possible sellers and pass it on to the Adversary, who will
+   then choose the seller from this list.
+4. Change all occurrences of the utility function to follow the same notation, especially
+   F_Trust, where the notation is very unclear.
+5. Change the desire (sent by the Environment) to be a set of assets that would satisfy
+   said desire.
+6. Change message(a, b, c) to (message, a, b, c) for readability.
+7. Fix a small semantic problem in the last 5 lines of the reaction of Pi_SAT to a
+   ``satisfy'' message.
+
 ## 8/2/2018
 
 ### UC-Trust
