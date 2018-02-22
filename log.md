@@ -35,10 +35,10 @@ This week the meeting was shorter than usual. Initially I gave a high-level expl
 the structure of and interaction between the various functionalities and protocols.
 Afterwards, I pointed out some core elements of each protocol and functionality.
 
-For F_TRADE and Pi_TRADE, Dr. Kiayias proposed no corrections. However, he proposed that
-access control be removed from F_ASSETS and substituted with a simple mechanism where a
+For F_Trade and Pi_Trade, Dr. Kiayias proposed no corrections. However, he proposed that
+access control be removed from F_Assets and substituted with a simple mechanism where a
 player can query ownership only for his own assets and not for other players' assets. For
-the next week I will have to write down F_TRUST.
+the next week I will have to write down F_Trust.
 
 ## 2/2/2018
 
@@ -50,19 +50,19 @@ the functionalities and protocols. Here is the description we decided upon:
 The Environment inputs to F_SAT a particular desire. F_SAT outputs either "satisfied" or
 "not satisfied".
 
-The realisation of F_SAT is Pi_SAT, which consults F_TRUST to decide who to ask for the
+The realisation of F_SAT is Pi_SAT, which consults F_Trust to decide who to ask for the
 satisfaction of the desire and decides which player is the best choice given a particular
 utility function. Then Pi_SAT inputs the asset to be bought, the player who sells it and
-the payment amount to F_TRADE, which returns either "payment failed" or ("payment went
-through" and ("asset received" or "asset not received")). F_TRADE does not have any
+the payment amount to F_Trade, which returns either "payment failed" or ("payment went
+through" and ("asset received" or "asset not received")). F_Trade does not have any
 utility semantics.
 
-Pi_TRADE is a rather simple "plumbing" protocol, which makes the payment with the help of
-F_LEDGER and changes the ownership of the asset with the help of F_ASSETS. F_LEDGER could
-be e.g. bitcoin backbone and F_ASSETS is a simple functionality that keeps track of
-asset ownership. F_ASSETS will remain without realisation.
+Pi_Trade is a rather simple "plumbing" protocol, which makes the payment with the help of
+F_Ledger and changes the ownership of the asset with the help of F_Assets. F_Ledger could
+be e.g. bitcoin backbone and F_Assets is a simple functionality that keeps track of
+asset ownership. F_Assets will remain without realisation.
 
-It is possible that F_SAT changes with respect to which F_TRUST is used by its
+It is possible that F_SAT changes with respect to which F_Trust is used by its
 corresponding Pi_SAT.
 
 ## 25/1/2018
