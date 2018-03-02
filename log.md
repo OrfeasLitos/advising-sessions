@@ -1,3 +1,20 @@
+## 2/3/2018
+
+### UC-Trust
+
+This week we reviewed the first concrete(ish) setup for the utility functions of rational
+Pi_SAT players, which involves discount functions, reputation and the probability that a
+player assigns to a future condition. It seems that the basic idea makes some sense, but
+there are still various unfinished details and debatable design choices. We have decided
+to postpone the exact description of these functions and the relation between them for a
+later time.
+
+My task for next week will be to go as far as I can in proving that the Environment can
+currently distinguish F_SAT (which never allows any cheating) from a set of Pi_SATs that
+use a bad F_Trust' which returns a random player from the input list. This is a simple
+sanity check of the model and an exercise in understanding, building and using the
+necessary syntax for such a proof, as well as seeing how such proofs look like.
+
 ## 22/2/2018
 
 ### UC-Trust
