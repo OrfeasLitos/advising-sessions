@@ -1,3 +1,31 @@
+## 8/3/2018
+
+### UC-Trust
+
+This week Dr. Kiayias commented on the first iteration of the proof that Pi_SAT using a
+bad quality F_Trust (which chooses a random player from the input list) and F_SAT are
+distinguishable. He verified the generally correct form of the proof and gave several
+minor notation and presentation suggestions, along with the following more important
+comments:
+
+1. In the case of the ideal world, the Adversary must be substituted by the simulator.
+2. Still referring to the ideal world, I will have to reason about the way the specific
+   utilities chosen along with the F_SAT specification ensure that Alice's desire will be
+   satisfied by Bob (possibly referring to specific code lines).
+3. Replace utilities with more general ones which only satisfy a specific property.
+   (optional) 
+4. Change F_SAT to still choose a player if the Adversary does not return a valid seller
+   to ensure that F_SAT is not too weak.
+5. Argue more specifically and formally on why the desire will never be satisfied in the
+   case of the hybrid world.
+
+### Payment Channels
+
+I briefly commented on the money-pot modelling idea where each coin belongs to a pot
+controlled by several people; possibly more than one person can acquire the same coin. The
+pot contract may create relationships ranging from fully-trusted (e.g. 1-of-n multisig) to
+trustless (signature from all members for each update).
+
 ## 2/3/2018
 
 ### UC-Trust
