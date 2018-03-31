@@ -1,3 +1,33 @@
+## 30/3/2018
+
+### UC-Trust
+
+This week we focused on the broader picture of the model, with the aim of revising current
+design choices. Our discussion focused on how to differentiate between the various
+possible F_Trust functionalities. We went together through a detailed tracing of a
+possible flow of messages, rethinking things that did not make sense as we went.
+
+The most prominent problem we faced was the way in which the (as of yet not conclusively
+specified) reputation parameter influences the utility functions of the players. Dr.
+Kiayias pointed out that normally players' utilities should depend only on their money and
+assets, thus we decided to remove the reputation from the list of parameters of the
+utility function. This in turn means that we have to rethink the way in which the optimal
+F_Trust can threaten sellers to cooperate, without creating an incentive for buyers to
+falsely accuse competitive sellers of fraud. Ultimately, our goal is to find an F_Trust
+formulation that can be proven (in)distinguishable from a Pi_Trust that possibly has
+oracle access to the "reputations" of the players (whatever that ends up to mean).
+
+Other comments made were that it may be cleaner for F_Assets and F_Ledger to be global
+functionalities (i.e. the Environment should always be able to exchange messages directly
+with them) and that the current formulation of F_Trust does not correctly maximise amongst
+all possible alternatives (even if we ignore the issue of reputations in the utility
+functions). Furthermore, it became obvious that a cleaner formulation of how players
+decide their current utility given their knowledge, their money and their assets is
+needed. More specifically, it is currently unclear how the "myopic" score of each moment
+is distinguished from the (infinite) series representing the utility that a
+forward-looking player enjoys and how the score of each moment adds up for the current
+utility. No changes were proposed to the current message flow.
+
 ## 8/3/2018
 
 ### UC-Trust
