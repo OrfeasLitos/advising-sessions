@@ -1,3 +1,29 @@
+## 5/4/3018
+
+### UC-Trust
+
+This week we discussed the implications of the current formulation of the utility function
+and, in light of the arising complexity and non-generality of the description, we opted
+for a different approach. More specifically, we decided that insisting on Pi_SAT being a
+utility-maximising algorithm is an idea that unnecessarily increases complexity, because
+it needs the utility function to be defined as a series over myopic utilities of every
+possible event weighted by the probability that this event takes place; all this projected
+for every moment in the future.
+
+Instead of this approach, for now we allow Pi_SAT to be in principle any algorithm; The
+Environment will simply provide to each player a utility function that takes as input
+(time, money, assets); the players may even ignore the utility function and act
+arbitrarily. At a moment in time not known to the players, the Environment will stop the
+game and check (a function of) the utility of each player.
+
+This approach ensures that the current evaluation of the utility function in F_SAT remains
+unchanged and that we will be able to argue about a variety of Pi_SAT strategies without
+too much notational and semantic burden. More specifically, it will be easier to argue
+about e.g. the social welfare in case no one ever cheats or the utility of a player that
+always cheats in a world that nobody cheats. A big assumption may be introduced to
+facilitate this goal, namely that the utilities handed out by the Environment follow a
+distribution that is prior common knowledge to the players.
+
 ## 30/3/2018
 
 ### UC-Trust
