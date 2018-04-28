@@ -1,3 +1,88 @@
+## 27/4/2018
+
+### UC-Trust
+
+This week I updated Prof. Kiayias regarding the plan of action. Every player is assinged a
+utility function by the Environment following a distribution over the class of all utility
+functions at the beginning of the game. This distribution is common knowledge to the
+players. Alice's utility function takes as input the time, the assets and the money that
+Alice possesses. We can consider the assets as continuous if this helps. At any moment in
+time (unknown to the players) the Environment may stop the game and evaluate the
+utilities.
+
+Our target will be to either find a particular protocol which constitutes a Nash
+Equilibrium for all reasonable utilities or prove that no such protocol exists, because
+e.g. there exist some utilities such that for any particular protocol-strategy, Alice can
+profitably switch to a more advantageous protocol-strategy.
+
+One such protocol to consider is outlined here: When the Environment asks Alice to satisfy
+a desire, Alice broadcasts that desire. Bob, who has a satisfying asset, makes an educated
+guess about the utility Alice will gain by the asset (according to the common knowledge
+utility distribution and possibly previous interactions with Alice) and proposes to her
+this price. If she accepts, he updates his guess on Alice's utility by assuming it is more
+profitable for her to get this asset and vice versa if she rejects the offer.
+
+Prof. Kiayias thought this plan of action seems reasonable and asked how this setup
+interacts with F_Trust. I proposed we simply substitute F_Trust with Trust is Risk in
+order to see if there exists a standardised interaction with Trust is Risk under the
+setting described above such that the entire protocol is a Nash Equilibrium. This will be
+next week's task.
+
+### First Year Review
+
+I shortly described the structure of the first year report, which is "Motivation",
+"Problems to solve", "Tools used", "Plan of action" (and contigency plan), "Work to date"
+and "Literature review". Prof. Kiayias approved.
+
+### Payment Channels
+
+We discussed my ideas on a general description of a payment channel. For now the idea is
+that a payment channel is a tuple consisting of two sets and a function. The first set
+contains pairs of players (public keys) and the "assured funds" which the players can
+withdraw unilaterally and are ensured to receive if other players settle on-chain. The
+second contains pairs of on-chain endpoints and "blocked funds" such that if some of the
+endpoints are settled, then only their funds will be redistributed according to a
+specified rule to the players. It holds that the sum of "assured funds" is at most equal
+to the sum of "blocked funds". Lastly the transition function takes a set of actions (as
+many as the players) and returns a new payment channel.
+
+First, Prof. Kiayias added that we should define the concatenation of two payment
+channels. I proposed that this concatenation should only exist if the transition functions
+are the same. In this case, the concatenation is simply a new payment channel with the
+same transition function (extended accordingly to accomodate for more players) and the
+concatenation of the two first and the two second sets. More specifically, if some players
+exist in both payment channels, then these two occurences are substituted with one
+occurence and final "assured funds" equal to the sum of the initial "assured funds".
+
+Second, we discussed on the routing of payments, and particularly whether we could
+leverage our knowledge on trust to speak about who assumes any risk involved.
+Specifically, we would like to see if any risk the intermediary assumes could be
+transferred to the paying party. I pointed out that virtually all current systems provide
+a completely trustless functionality and thus trust does not currently play a role here.
+We walked though a particular example based on the Lightning network to show that if there
+is a conflict between the routing of two payments, then it is in the discretion of the
+party controlling the funds in conflict to resolve the issue; if she commits money to both
+payments and all other players follow the protocol, then she will lose her funds for sure:
+there is no risk at all, only certain loss.
+
+We also briefly discussed the results of [Concurrency and Privacy with Payment-Channel
+Networks](https://secpriv.tuwien.ac.at/fileadmin/t/secpriv/Papers/ccs2017a.pdf) that show
+that it is impossible to have a payment routing system that is both non-blocking and
+private.
+
+Lastly I gave a rough list of properties that may be of interest (or should be abstracted
+away) regarding payment channels: Local storage, memory, CPU, number of messages,
+necessary online time, various timeouts, different needs for creation, update and channel
+settlement, privacy for on-chain observers and other channel participants, (non-)blocking
+routing, fees, multi-hop channels rules (directionality, collusion-resistant privacy) use
+of underlying blockchain tools (e.g. SNARKs in
+[Bolt](https://eprint.iacr.org/2016/701.pdf)), time to cashout in case of non-cooperation,
+possibility for faster cashout in case of cooperation, need for trust, possibility of
+arbitrary contracts (e.g. [PERUN](https://eprint.iacr.org/2017/635.pdf)) and others. 
+
+We agreed that I will focus on the first year report and on the e-commerce trust system
+for now.
+
 ## 5/4/2018
 
 ### UC-Trust
