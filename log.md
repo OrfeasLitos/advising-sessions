@@ -78,7 +78,7 @@ routing, fees, multi-hop channels rules (directionality, collusion-resistant pri
 of underlying blockchain tools (e.g. SNARKs in
 [Bolt](https://eprint.iacr.org/2016/701.pdf)), time to cashout in case of non-cooperation,
 possibility for faster cashout in case of cooperation, need for trust, possibility of
-arbitrary contracts (e.g. [PERUN](https://eprint.iacr.org/2017/635.pdf)) and others. 
+arbitrary contracts (e.g. [PERUN](https://eprint.iacr.org/2017/635.pdf)) and others.
 
 We agreed that I will focus on the first year report and on the e-commerce trust system
 for now.
