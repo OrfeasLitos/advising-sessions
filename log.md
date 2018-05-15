@@ -1,3 +1,40 @@
+## 4/5/2018
+
+This week we did not have a meeting. The email with the weekly update that I sent to Prof.
+Kiayias follows:
+
+I tried to describe a portion of a Pi_SAT protocol that interacts with F_Trust = Trust is
+Risk. We skip the part where Alice has the desire and searches for someone to satisfy it
+and we suppose that Bob offers to satisfy her desire for price p (t=0). The idea is as
+follows: If (indirect trust from Alice to Bob)_0 >= p, then Alice redistributes her direct
+trust (t=1) so that (indirect trust from Alice to Bob)_0 = (indirect trust from Alice to
+Bob)_1 and (direct trust from Alice to Bob)_1 = p. She has now paid Bob.
+
+If Bob goes through with the trade and does not touch her direct trust, then Alice
+redistributes her direct trust identically to the initial state (t=0) and additionally
+adds p more direct trust to Bob. If he sends her the asset but takes away her direct
+trust, then she only reverts her direct trust to the initial state (t=0). (e.g. if Charlie
+was the friend who linked her with Bob, then she replenishes her trust to Charlie.) To do
+either, she uses her exclusive coins if she has any, otherwise she uses the least recently
+used direct trust. The LRU trust is the direct trust that has been leveraged the farthest
+back in the past to make a successful trade.
+
+If Bob does not go through with the trade, then Alice tries to take her money back. If Bob
+has not taken her money, she reverts her direct trusts to their initial state. If Bob has
+taken her money, then she reduces her direct trust to the friends that introduced her to
+Bob by p and takes this money for exclusive use.
+
+Bob can attack Alice if he colludes with all of Alice's friends that made her trust him.
+To succeed, they have to coordinate and steal at the same time. This attack is beneficial
+to Alice's friends only if they have to obey Bob for some other reason; otherwise, they
+would have made more money if they stole from Alice before Bob was implicated at all.
+
+It would be interesting to see what exactly can Bob do to pressure Alice's friends to
+betray her. Intuitively, Bob could be a high-level mafia member and Alice's friends the
+lower-level accomplices who prefer to stay in the mafia in the hopes of making
+money/increasing their rank instead of being honest or stealing for themselves before Bob
+gets implicated.
+
 ## 27/4/2018
 
 ### UC-Trust
@@ -138,6 +175,55 @@ needed. More specifically, it is currently unclear how the "myopic" score of eac
 is distinguished from the (infinite) series representing the utility that a
 forward-looking player enjoys and how the score of each moment adds up for the current
 utility. No changes were proposed to the current message flow.
+
+## 22/3/2018
+
+This week we did not have a meeting. The email with the weekly update that I sent to Prof.
+Kiayias follows:
+
+So, the last two weeks I refined and added more detail to the distinguishability proof in
+uc-trust, I think it is now complete. You can read it @
+https://github.com/OrfeasLitos/UC-Trust/blob/master/what_is_trust.pdf page 15.
+
+Furthermore, I have been thinking how to set up the "reputation" parameter. I kept hitting
+dead-ends, because every idea I had was hitting our favourite wall: it seems that all
+global-valued reputation systems are attackable. So I decided to change the parameters to
+the utility function of Alice. Instead of a single reputation number, I am thinking of
+putting the following tuple: each element will correspond to one player other than Alice,
+say Bob. This element will itself be a tuple of Powerset(Assets) elements. Each element of
+this tuple will correspond to a particular subset of Assets. More concretely, each element
+will be the probability that Bob asks for the satisfaction of this particular combination
+of Assets. Here is an example:
+
+We live in the world of P = {Alice, Bob, Charlie}, where there exist Assets = {bicycle,
+game boy} (and of course money). Alice's utility function for time t is the following:
+
+U_Alice(t)(x coins, y Assets, ((Pr[Alice receives message (canYouSatisfy, {bicycle}) from
+Bob at time t], Pr[Alice receives message (canYouSatisfy, {game boy}) from Bob at time t],
+Pr[Alice receives message (canYouSatisfy, {bicycle, game boy}) from Bob at time t]),
+(Pr[Alice receives message (canYouSatisfy, {bicycle}) from Charlie at time t], Pr[Alice
+receives message (canYouSatisfy, {game boy}) from Charlie at time t], Pr[Alice receives
+message (canYouSatisfy, {bicycle, game boy}) from Charlie at time t]))) = z
+
+where x Natural, z Real, y a multiset of elements of Assets
+
+How does this sound?
+
+Finally, I have been compiling a list of properties for the payment channels. I aim to
+gradually make it complete. Now it looks like this:
+
+1. Number of participants in the channel
+1. On-chain connection(s) between participants
+1. Actions: open, update, execute, close
+1. Who needs to sign for each action, who is notified, how many rounds of communication?
+1. Can a participant unilaterally commit on-chain?
+1. Up to how much money can a participant unilaterally obtain?
+1. What can a malicious party do? If it corrupts more participants it can do more?
+1. How much slower is the process in case of a malicious party?
+1. How expensive are the actions? (CPU, memory, storage)
+1. How expensive are interactions with the blockchain? (fees, time, etc.)
+
+Tell me your opinion.
 
 ## 8/3/2018
 
