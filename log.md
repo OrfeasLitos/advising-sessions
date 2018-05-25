@@ -1,3 +1,70 @@
+## 25/5/2018
+
+### UC-Trust
+
+In this week's meeting we mainly discussed about the new trust protocol Pi_Trust that
+leverages Trust is Risk, along with the game that assesses the ability of an adversarial
+player to accrue a high utility. More specifically, in the current (informal) description
+of Pi_Trust, Alice engages in a trade with Bob only if the price p of the good does not
+exceed her indirect trust to Bob. She then pays him using the Trust is Risk method. If the
+trade succeeds and Bob got r, 0 <= r <= p of her direct trust/payment, she reverts to her
+previous trust towards her friends and adds an additional p - r direct trust to Bob. If
+the trade fails and Bob got r, 0 <= r <= p of her direct trust/payment, she takes back the
+rest of the p - r coins from Bob and reduces her direct trust to the responsible friends
+by r.
+
+Prof. Kiayias liked this version of the game and told me that the next step in this
+direction is to define an F_Trust that can idealise the properties such a Pi_Trust has. We
+then realised that it will be hard to define such a functionality in a way that greatly
+simplifies on the design of Pi_Trust, especially since such an F_Trust must interact with
+the global functionality G_Ledger in an indistinguishable way from Pi_Trust. Putting the
+ledger inside the functionality does not seem to be an option either, since the ledger
+must be accessible by F_Trade (or Pi_Trade) as well. We have to look into this issue more
+thoroughly.
+
+Prof. Kiayias also suggested that I define F_Trust on graphs and an accompanying utility
+function on graphs such that when parties cheat, the change that happens on the graph
+reduces their utility.
+
+The game takes as parameter the length, the trust graph, the set of desires, the common
+prior for the utilities, the length of the game and the corrupted node. It then starts
+copies of Pi_SAT for the honest nodes and lets the adversary start with the malicious node
+and the system parameters (apart from the length of the game) as input (N.B.: currently
+only the malicious node is given to the adversary. This is a mistake). It then hands out
+utilities drawn from the common prior to all players. Then the main part of the game
+starts, which repeats for the length of the game: A random buyer, a random desire and a
+random subset of possible vendors is chosen. The player is then instructed to satisfy this
+desire. The algorithm finally outputs the utility of the Adversary. It may make sense to
+change this output to the node that has the maximum utility and then try to argue that our
+protocols ensure that the Adversary does not have the maximum utility more often than the
+rest of the nodes.
+
+### First year review
+
+Prof. Aggelos gave me some feedback on the [first year
+report](https://github.com/OrfeasLitos/first-year-review/blob/master/first_year_report.pdf).
+First of all, he asked me to rewrite the "Game Theory approach" section to include only
+the relevant background on Game Theory and move the justification of the need for Game
+Theory elsewhere. Secondly he suggested that I explicitly state the design choice in
+F_Trade that the buyer pays before the vendor sends the object, thus becoming the one
+susceptible to cheating. The other way around could be chosen as well, but we have decided
+not to in order to more closely resemble the real-world case.
+
+### Miscalleanous
+
+1. I commented on my new direction on defining trust using a bayesian game. I briefly
+   explained that this idea encapsulates the computational limits of agents, who have to
+   choose whether to trust and save time or devote more time to make more informed
+   decisions. I will further read on the related Game Theory topics, organise a meeting
+   with Kousha and present this idea in the first year review.
+2. Prof. Kiayias proposed that I start a new project with Dionysis Zindros to look into
+   IOTA and other hashgraph cryptocurrencies and analyse their security properties.
+3. We agreed that I write an improved version of the signatures chapter in the [lecture
+   notes](http://www.kiayias.com/Aggelos_Kiayias/Introduction_to_Modern_Cryptography_files/Cryptograph_Primitives_and_Protocols.pdf),
+   especially the proof of security.
+4. We agreed to devote some time at our next meeting to browse the existing resources on
+   cryptographic and game theoretic combined approaches.
+
 ## 4/5/2018
 
 This week we did not have a meeting. The email with the weekly update that I sent to Prof.
