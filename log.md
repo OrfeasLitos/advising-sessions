@@ -1,3 +1,47 @@
+## 1/6/2018
+
+This week we spent half of the time discussing UC-Trust and the rest for the Payment
+Channels.
+
+### UC-Trust
+
+This week we focussed on understanding the methodology of [Rational Protocol
+Design](https://eprint.iacr.org/2013/496.pdf). In this model, we aim to find a protocol
+that realises a particular functionality of interest in such a way that rational
+attackers will maximise their utility by following the protocol. We discussed the
+necessary elements for an *attack model*, which are:
+1. A "secure" functionality, the one we want to find a protocol for.
+2. A "weakened" functionality, which explicitly allows the adversary to achieve security
+breaches.
+3. A utility function for the *protocol designer* and another for the *attacker*.
+A protocol that keeps the utility of any attacker within negligible distance from the
+utility of the attacker interacting with the secure functionality is *payoff secure*.
+
+After deliberating on the techniques and the details used in [But why does it
+work?](https://eprint.iacr.org/2018/138.pdf), we concluded that the next target should be
+to write a weakened F_SAT functionality (e.g. one that explicitly allows an adversary to
+cause cheats) and utility functions for both the game designer and the attacker. We also
+concluded that my previous efforts to formulate a weakened F_Trust were somewhat
+misguided.
+
+### Payment Channels
+
+As for the Payment Channels, I described the intuition behind my current model. More
+precisely, I model a Payment Network which consists of players and their "assured funds",
+i.e. the minimum funds that they will certainly obtain if the entire network is settled
+for any reason, and endpoints and their associated "tied funds". Each endpoint corresponds
+to a single on-chain transaction with locked funds that can be settled by some players of
+the Network. Additionally, the Network is equipped with a transition function that takes
+the current state of the Network and some actions by players and returns a new state of
+the Network.
+
+Prof. Kiayias agreed with the intuition behind this and told me that it is time to
+formulate a specific functionality that serves requests from players to pay other players.
+It should read the ledger to deduce the current state of the Network. If it can find a
+path and make the payment, it does so without touching the blockchain. If it is unable, it
+returns a relevant message to the players. I will start formulating this functionality
+this week.
+
 ## 25/5/2018
 
 ### UC-Trust
