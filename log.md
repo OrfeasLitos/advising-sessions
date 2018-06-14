@@ -1,3 +1,36 @@
+## 14/6/2018
+
+This time we had a 30' online meeting with Prof. Kiayias.
+
+### UC-Trust
+
+Regarding the trust-related project, I showed Prof. Kiayias the first version of the
+weakened <F_SAT>. He agreed with the general direction of the strengths given to the
+Adversary there. He resolved my issue of how to punish the Adversary in case of a breach
+(e.g. a cheat) by adding the correct punishment to the strong functionality F_SAT. It is
+still unclear how the functionality will notice the more subtle attacks, such as the
+`chooseMe` breach.
+
+We did not have any progress with respect to the utilities of the players. Currently, the
+best idea is to make the utility of the Adversary equal to the utility it is granted by
+the Environment at the beginning of the execution, a solution which unfortunately is not
+compatible with the RPD framework where the utility is chosen beforehand and then the
+Environment is allowed to be any ITM.
+
+### Payment Channels
+
+Regarding the Payment Channels, I showed Prof. Kiayias the first formulation of the
+payment network functionality, F_PayNet. The current formulation consists of reaction to
+three messages: `open`, `pay` and `close`. He liked the overall idea and had no obvious
+corrections to make. He advised me to integrate the F_PayNet with the most modern
+formulation of F_Ledger (as described in [Ouroboros
+Genesis](https://eprint.iacr.org/2018/378.pdf)) as the next target. This will connect
+F_PayNet with existing UC functionalities and facilitate the subsequent proof steps. The
+following step (which will be taken after the aforementioned integration has taken place)
+will be to provide some power to the Adversary, who now is completely ignored.
+
+We will have our next after 26/6, which is the date I return to Edinburgh.
+
 ## 6/6/2018
 
 This meeting was between me and Prof. Kousha Etessami; Prof. Kiayias was not present. In
