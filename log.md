@@ -1,3 +1,26 @@
+## 6/6/2018
+
+This meeting was between me and Prof. Kousha Etessami; Prof. Kiayias was not present. In
+this meeting, we discussed my high-level ideas about formulating a game (in the
+game-theoretic sense) where each player has a particular belief system over the world and
+possibly a different prior on the state of the world. The players would be polynomially
+constrained, and thus would have to cleverly allocate their resources for every decision.
+The horizon of their knowledge would be complemented with their *trust* towards decisions
+of other players and the possible states of the world farther from the horizon.
+Epsilon-equilibria would be the interesting target of analysing such a game.
+
+Unfortunately Prof. Etessami showed me the state of the art: There exist no results on
+even the existence of equilibria in such complex games. The best results we have regard
+much simpler games with a very limited number of players. Even worse, Prof. Etessami's
+intuition was that constraining the players will not much facilitate the analysis of such
+games; much tighter constraints should be placed on the power of the players in order to
+sucessfully argue about the existence of equilibria in such games, let alone compute them.
+
+My take-home message was that this line of research should be put on hold. It is true that
+my knowledge on both the field of Cryptography and on that of Game Theory could help me to
+improve the state of the art in this direction, but this is something I will only pursue
+if my other threads do not yield the desired results.
+
 ## 1/6/2018
 
 This week we spent half of the time discussing UC-Trust and the rest for the Payment
