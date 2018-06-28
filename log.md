@@ -29,7 +29,7 @@ F_PayNet with existing UC functionalities and facilitate the subsequent proof st
 following step (which will be taken after the aforementioned integration has taken place)
 will be to provide some power to the Adversary, who now is completely ignored.
 
-We will have our next after 26/6, which is the date I return to Edinburgh.
+We will have our next meeting after 26/6, which is the date I return to Edinburgh.
 
 ## 6/6/2018
 
