@@ -1,3 +1,19 @@
+## 12/7/2018
+
+This time we discussed on payment networks (as we now call the payment channels) for 30'.
+
+More in detail, we mostly discussed on the Lightning Protocol, which I have been writing
+in a more UC-friendly form (Pi_LN). Prof. Kiayias proposed a series of improvements. First
+of all, he recommended that all channels, both those including the current player and
+those involving others, should be directly added to the network graph upon
+creation/learning of a new channel.
+
+Secondly, after reading the crucial part of the off-chain payment, where Alice sends a
+correctly built Onion-encrypted message to Bob that contains a valid HTLC payment to Bob
+with the specified payment (currently l. 36), Prof. Kiayias recommended that I use an
+existing Onion primitive and that I build a suitable HTLC primitive to exactly model the
+desired behaviour.
+
 ## 14/6/2018
 
 This time we had a 30' online meeting with Prof. Kiayias.
