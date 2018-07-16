@@ -1,3 +1,38 @@
+## 16/7/2018
+
+This week we dedicated our time on the latest changes to UC-Trust for 30'.
+
+We went through the current iteration of the strong/weak F_SAT functionality (the two are
+combined, with the weak version added to the strong as comments) and the utilities of the
+Designer and the Attacker (as per the [RPD](https://eprint.iacr.org/2013/496.pdf)
+framework).
+
+Prof. Kiayias recommended that the "utility" within the Functionality be renamed to
+"payoff" to avoid confusion with the RPD utility. I proposed that several "Seller"
+variables be replaced with "Offer" where suitable. Moving on to more important points, we
+discussed on the specific strengths that are provided to the Adversary by the weak <F_SAT>
+and they seem reasonable. In particular, since the Adversary does not know the payoffs of
+the players, it must be able to influence the list of offers separately from changing the
+actual offer selected. Specifying distList() and distSeller() (a.k.a. distOffer()), as
+well as solving the issue that the current punishment against cheats is both too harsh
+(grim trigger) and too restricted (friends of the cheated player are not informed) are
+deferred to the future.
+
+We then focussed on the Designer and Attacker utilities. After understanding the rationale
+behind the formulation, Prof. Kiayias agreed that there is nothing ill-defined and the
+general idea seems reasonable. The only change proposed (but deferred to the future) is to
+remove from the Environment the ability to assign payoffs to the players and externally
+quantify over all possible payoffs (or restricted classes of them).
+
+Prof. Kiayias suggested that the next steps to be taken should be to exactly specify what
+an execution looks like (taking inspiration from [Bitcoin
+Backbone](https://eprint.iacr.org/2014/765.pdf) and the way the players' views are
+concatenated and handled) and to precisely explain what is the target of the RPD analysis
+-\ i.e. to at least prove that Pi_Trust = Trust is Risk is a Nash Equilibrium (like the
+Bitcoin protocol in [BGMTZ](https://eprint.iacr.org/2018/138.pdf)), maybe prove that it is
+*optimal* (according to the RPD definition) and ideally to prove that it actually realizes
+F_SAT (especially the last part is probably impossible).
+
 ## 12/7/2018
 
 This time we discussed on payment networks (as we now call the payment channels) for 30'.
