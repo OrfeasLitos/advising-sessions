@@ -47,7 +47,9 @@ Secondly, after reading the crucial part of the off-chain payment, where Alice s
 correctly built Onion-encrypted message to Bob that contains a valid HTLC payment to Bob
 with the specified payment (currently l. 36), Prof. Kiayias recommended that I use an
 existing Onion primitive and that I build a suitable HTLC primitive to exactly model the
-desired behaviour.
+desired behaviour. In more detail, the HTLC primitive should reflect an NP relation
+between a statement (public key and hash, known to the sender) and a witness (signature
+and preimage, known to the recipient until the moment the payment is sent).
 
 Lastly, he pointed out that in the current formulation, no information is leaked to the
 Adversary. I will have to make an informed decision on what exactly to leak to it.
