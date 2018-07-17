@@ -52,7 +52,9 @@ between a statement (public key and hash, known to the sender) and a witness (si
 and preimage, known to the recipient until the moment the payment is sent).
 
 Lastly, he pointed out that in the current formulation, no information is leaked to the
-Adversary. I will have to make an informed decision on what exactly to leak to it.
+Adversary. I will have to make an informed decision on what exactly to leak to it. Prof.
+Kiayias suggested that I use [A Framework for the Sound Specification of Cryptographic
+Tasks](https://eprint.iacr.org/2008/132.pdf) to approach more methodologically this issue.
 
 ## 14/6/2018
 
