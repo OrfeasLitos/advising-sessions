@@ -49,6 +49,9 @@ with the specified payment (currently l. 36), Prof. Kiayias recommended that I u
 existing Onion primitive and that I build a suitable HTLC primitive to exactly model the
 desired behaviour.
 
+Lastly, he pointed out that in the current formulation, no information is leaked to the
+Adversary. I will have to make an informed decision on what exactly to leak to it.
+
 ## 14/6/2018
 
 This time we had a 30' online meeting with Prof. Kiayias.
