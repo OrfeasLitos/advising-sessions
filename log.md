@@ -28,7 +28,7 @@ Prof. Kiayias suggested that the next steps to be taken should be to exactly spe
 an execution looks like (taking inspiration from [Bitcoin
 Backbone](https://eprint.iacr.org/2014/765.pdf) and the way the players' views are
 concatenated and handled) and to precisely explain what is the target of the RPD analysis
--\ i.e. to at least prove that Pi_Trust = Trust is Risk is a Nash Equilibrium (like the
+\- i.e. to at least prove that Pi_Trust = Trust is Risk is a Nash Equilibrium (like the
 Bitcoin protocol in [BGMTZ](https://eprint.iacr.org/2018/138.pdf)), maybe prove that it is
 *optimal* (according to the RPD definition) and ideally to prove that it actually realizes
 F_SAT (especially the last part is probably impossible).
