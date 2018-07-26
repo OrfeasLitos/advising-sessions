@@ -1,3 +1,96 @@
+## 26/7/2018
+
+This week we had an online meeting that lasted almost an hour. We used most of this time
+for the Payment Networks.
+
+### Payment Networks
+
+I explained to Prof. Kiayias that I did not work on the HTLC because there were other
+priorities, namely to precisely describe the lightning protocol for opening a channel. I
+gave a high-level description on the procedure (players exchange keys, then exchange
+the unsigned funding transaction and signed commitment and revocable delivery
+transactions) and justified the middle ground between [the
+specification](https://github.com/lightningnetwork/lightning-rfc/) and [the
+paper](https://lightning.network/lightning-network-paper.pdf) I have chosen. In
+particular, only one player funds the channel for simplicity (as in the specification) but
+the channel opening protocol follows the paper paradigm, since the full complexity this
+version provides will be used either way when updating the channel (and also because this
+procedure is better documented).
+
+I then asked whether the opening protocol should also be matched to a relevant
+functionality and Prof. Kiayias answered negatively. To facilitate readability, the
+protocol should be simply abstracted away as a separate function. He also suggested that I
+add Alice's sid to the opening message sent by the Environment, just to follow convention.
+
+I also let him know that the protocol had to have an additional case when paying to
+account for the event that the two parties already have a channel between them. This will
+be the next part of the protocol to be fully specified (after the channel opening is
+done).
+
+Furthermore, we discussed the fact that some user-defined time limits are needed in the
+channel opening phase. Also relevant was the fact that if Alice tries to cheat by
+broadcasting an older transaction, Bob may catch her and take all the funds of the channel
+if he is activated within the time limit, or lose his share if he is late. Prof. Kiayias
+pointed out that, if we want the protocol to realise the functionality, both the timeouts
+and the possible events in case of cheating should also be added to F_PayNet. I then
+objected that taking such an approach would eventually make F_PayNet (a) much more complex
+and (b) too specific to be compatible with other payment networks protocols apart from
+Lightning. Prof. Kiayias agreed and proposed the "wrapper" approach as used in
+[KZZ](https://eprint.iacr.org/2015/574.pdf). This way, we would have a simple ideal
+functionality just like F_PayNet is now and a wrapper that makes it less ideal but
+realisable. Also, it would be the task of the Simulator to decide what cut of the funds
+Bob will take if Alice cheats, with the (less ideal) functionality only checking that, in
+case of timely activation, Bob takes at least as much as asserted in the latest channel
+state - this could solve the issue of the functionality losing compatibility with other
+payment network protocols, e.g. [Perun](https://eprint.iacr.org/2017/635.pdf).
+
+Another important issue we discussed is that of the integration with F_Ledger. This issue
+also affects UC-Trust. The problem is that F_Ledger covers the consensus layer, but leaves
+as parameter predicates the content of the blocks and the rules imposed on them,
+essentially abstracting away the application layer. Unfortunately, the point of using a
+ledger functionality in our case is to have a concrete application layer where
+transactions can be submitted and retrieved in a secure way. I will write an email to
+Prof. Kiayias elaborating on this point.
+
+Lastly, I proposed an alternative approach to the handling of functionalities. My proposal
+was motivated by the fact that we will probably have to define several versions of
+F_PayNet with slight variations to accommodate for different payment network protocols,
+but also by the fact that modern functionalities (e.g. F_Ledger) have become large and
+complex and as a result it is not evident anymore that they provide specific security
+properties. The proposal was a two-level approach: First define the desired security
+properties, then define a functionality that provides them and finally create a protocol
+that realises the functionality. This way we can have a list of security properties for
+payment channels and systematically prove which protocols provide which properties,
+instead of only proving that they realise specific versions of F_PayNet. This approach
+could also be used to prove that F_Ledger provides liveness and persistence. Prof. Kiayias
+recognised the issue, but was hesitant as to whether the approach I proposed is the
+correct one because it may hurt composability. We will return to this point at a later
+date.
+
+### UC-Trust
+
+I briefly let Prof. Kiayias know that in UC-Trust we should go after showing under which
+conditions is Pi_TIR is *attack-payoff optimal* (as defined in
+[RPD](https://eprint.iacr.org/2013/496.pdf)) since it does not seem that Pi_TIR will be
+*attack-payoff secure* for interesting cases.
+
+I also told him that I spent a lot of time trying to unpack the definition of the utility
+function in RPD (also discussing with others) and that I think there are some notational
+issues. Prof. Kiayias proposed that we do a joint meeting with Dr. Vassilis Zikas to
+clarify these points. I also promised to ask Dr. Zikas for clarifications on the crucial
+points through email.
+
+### Steem
+
+As far as the [Steem](https://steem.com/) project with MsC student Andrés Mosteiro
+Monteoliva goes, I told Prof. Kiayias that I now have a rather concrete understanding of
+how the rating system of Steem works. I let him know that I had some more meetings with
+Andrés (one of which was a coding session for the voting simulation) and that there exists
+tension between making the model and the simulation robust enough to really compare with
+the real-world Steem setting and keeping it simple and within the necessary time frame.
+Prof. Kiayias proposed once more a joint meeting with the three of us. I promised to have
+at least a basic formal model for Steem ready by then.
+
 ## 16/7/2018
 
 This week we dedicated our time on the latest changes to UC-Trust for 30'.
