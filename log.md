@@ -1,3 +1,12 @@
+## 22/8/2018
+
+This time we had a three-way meeting on the post voting paper with Prof. Kiayias and
+Andrés Mosteiro Monteoliva, which lasted for one hour. We showed Prof. Kiayias the current
+state of our model. Apart from many minor corrections, he proposed to separate the
+description of the general voting system, the specifics of Steem and the players'
+strategy. He then formulated the basics of the desired definitions and theorems we would
+like to prove.
+
 ## 2/8/2018
 
 This week we had an online meeting that lasted 45'. We focussed on the Steem-related
