@@ -1,4 +1,4 @@
-## 2/8/0218
+## 2/8/2018
 
 This week we had an online meeting that lasted 45'. We focussed on the Steem-related
 project.
