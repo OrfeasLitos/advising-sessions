@@ -1,3 +1,38 @@
+## 24/8/2018
+
+This time we had another three-way meeting on the post voting paper with Prof. Kiayias and
+Andrés Mosteiro Monteoliva, which lasted for one hour. We discussed on how to define a
+post-ordering system and did a short review of the simulation code, written in Python.
+
+After some deliberation, we concluded that the best approach for the definition of the
+system would be to define a global functionality G\_Feed which has as hard-coded
+parameters the number of players, the initial list of posts, number of voting rounds,
+possibly the coins of each player and possibly more. Alongside this functionality, we will
+define a corresponding Honest Strategy for the players that interact with this
+functionality. The post-voting system would be defined as G\_Feed and the Honest Strategy.
+A particular post-voting system can be put to action as follows: The environment activates
+a player, who requests to read the current list of posts from G\_Feed and, upon receiving
+the current list, it responds with a Vote message. At some point G\_Feed completes
+execution and outputs to the environment the final state of the list. We are thus able to
+define t-convergence under honesty for an arbitrary system. Afterwards it will be
+straightforward to define Steemit as a particular post-voting system and prove the bounds
+within which it t-converges.
+
+We also decided to completely drop the concept of the Likeability Distribution of players
+and only keep the Likeability of posts. This makes sense since players cannot create posts
+during the execution, but posts are already defined in G\_Feed. Other small corrections
+include replacing IdealOrder() function from set to list with isIdealOrder() property
+(from list to {True, False}). Its name should also be shortened. Finally I should use
+macros for variables to facilitate future changes in notation.
+
+We dedicated the rest of the meeting to the simulation code. We showed Prof. Kiayias the
+current state of the code and he requested that Andrés create a series of simulations in
+order to plot the t of t-convergence dependent on the various twekable parameters, such as
+rounds, attention span, etc. Similar plots with the Kendall-tau or Spearman metrics would
+be useful. Ideally we would like to have a simple function that takes as inputs the
+parameters and which parameter we want to use as x, runs several simulations and outputs
+the plots.
+
 ## 22/8/2018
 
 This time we had a three-way meeting on the post voting paper with Prof. Kiayias and
