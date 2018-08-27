@@ -1,5 +1,7 @@
 ## 24/8/2018
 
+### Post-voting
+
 This time we had another three-way meeting on the post voting paper with Prof. Kiayias and
 Andrés Mosteiro Monteoliva, which lasted for one hour. We discussed on how to define a
 post-ordering system and did a short review of the simulation code, written in Python.
@@ -34,6 +36,8 @@ parameters and which parameter we want to use as x, runs several simulations and
 the plots.
 
 ## 22/8/2018
+
+### Post-voting
 
 This time we had a three-way meeting on the post voting paper with Prof. Kiayias and
 Andrés Mosteiro Monteoliva, which lasted for one hour. We showed Prof. Kiayias the current
