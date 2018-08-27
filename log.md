@@ -1,3 +1,35 @@
+### 27/8/2018
+
+This meeting had an initial 30' part where me, Prof. Kiayias and Dr. Vassilis Zikas were
+present and a second that lasted 45' and was only between me and Dr. Zikas. We discussed
+the UC-Trust model and particularly asked for Dr. Zikas's expertise on the [Rational
+Protocol Design](https://eprint.iacr.org/2013/496.pdf) framework and how to apply it to
+our setting.
+
+### UC-Trust
+
+The first 15' we talked about a misunderstanding of mine with respect to the definition of
+the set of all ``good'' simulators, C\_A. The current definition given is correct, I will
+have to look more into it to clear up my misunderstanding. We then gave a thorough
+explanation of our current approach to using the framework. Dr. Zikas at first commented
+that giving the Environment the ability to choose payoffs would mean that the notion of
+optimality ceases to exist and proving that a protocol is optimal in this case would be
+equivalent to proving that it is secure in the usual sense.
+
+We then moved on to discuss without Prof. Kiayias, delving deeper into the details of our
+approach. I explained how payoffs are currently implemented and why they are needed in the
+cryptographic game as well, along with how they are separated and combined with the
+game-theoretic utilities. As the rest of the architecture was being explained, Dr. Zikas
+realized that the problem we are trying to tackle is indeed complex and that there exist
+two intertwined mechanics that could be analysed more easily individually. In particular,
+F\_SAT currently implements both the auction-matching and the fair swap mechanisms, both
+of which, if not securely realized, allow for strategic behaviour from agents. Thus, Dr.
+Zikas's suggestion was to split this functionality into two, more easily analysable parts.
+In particular, he suggested that I rewrite F\_Trade to never cheat and be used as a helper
+functionality by F\_Match. The latter functionality is closer to the problem Trust is Risk
+tries to solve, thus for now it makes more sense to focus on this. I will try to split
+F\_SAT into these two parts and make the presentation reasonable for our next meeting.
+
 ## 24/8/2018
 
 ### Post-voting
