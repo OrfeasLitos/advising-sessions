@@ -1,3 +1,18 @@
+## 11/9/2018
+
+### Post voting system
+
+This week we had a 30' meeting with Prof. Kiayias, which we dedicated to the post voting
+system paper. I presented to him the new definitions of an activation message, Execution
+Pattern and of (N, R, M, t)-convergence, with which he agreed. He proposed that I change
+the definition of the activation message (and as a result that of Execution Pattern) to
+contain the target player's pid.
+
+I then showed him the latest progress in the proof of convergence, focussing on the most
+complex counter-example that breaks convergence when the number of rounds is not enough
+for a player who fully likes all posts to vote all of them with full voting power. He
+found the approach reasonable and approved of the progress.
+
 ## 31/8/2018
 
 ### Post voting system
