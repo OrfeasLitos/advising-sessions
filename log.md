@@ -1,4 +1,4 @@
-### 27/8/2018
+## 27/8/2018
 
 This meeting had an initial 30' part where me, Prof. Kiayias and Dr. Vassilis Zikas were
 present and a second that lasted 45' and was only between me and Dr. Zikas. We discussed
