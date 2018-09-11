@@ -1,3 +1,27 @@
+## 31/8/2018
+
+### Post voting system
+
+This week we had an 1-hour meeting with Prof. Kiayias, which was dedicated to the post
+voting system paper. I mentioned a series of design choices, such as the definition of a
+general post voting system and the five parametrising algorithms. We went through most of
+the pseudocodes in detail. I also let Prof. Kiayias know of the problem with letting the
+Environment be an arbitrary ITM: it may never activate any player.
+
+Prof. Kiayias proposed a series of improvements. First of all, he suggested to define a
+post voting system as a tuple of four algorithms: Init, Aux, HandleVote and Vote. These
+algorightms parametrize the already-defined G\_Feed and honest player. He also suggested
+that we do away with the Init algorithm for the honest player. He also highlighted two
+minor mistakes in the pseudocode.
+
+The most important architectural change that he proposed is that of restricting the
+Environment to very specific Execution Patterns that suit our need. This way we can assume
+that the Environment behaves as expected and does not fight the evolution of the system.
+Since we make no security claims, this is acceptable. This change resolves a series of
+other problems as well, such as the fact that having G\_feed output its final post list
+becomes redundant and the number of rounds parameter becomes a "global variable" that is
+implicitly known by all algorithms and functions, therefore simplifying the writeup.
+
 ## 27/8/2018
 
 This meeting had an initial 30' part where me, Prof. Kiayias and Dr. Vassilis Zikas were
