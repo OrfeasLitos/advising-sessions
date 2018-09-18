@@ -1,3 +1,15 @@
+## 18/9/2018
+
+### Post voting system
+
+Today we had a four-way meeting with the four co-authors: me, Andrés, Prof. Kiayias and
+Benjamin Livshits. We gave Ben a rough outline of the current state of the paper,
+describing our approach and model. He commented on the many rough edges of the paper and
+proposed that we carry over some parts from Andrés's dissertation. We also distributed
+responsibilities, with Prof. Kiayias focussing on the Introduction, me on the proof (which
+will go to the appendix) and the theory section and Andrés on the related work and the
+simulation. I will also help with coding the Greedy part of the simulation if needed.
+
 ## 11/9/2018
 
 ### Post voting system
