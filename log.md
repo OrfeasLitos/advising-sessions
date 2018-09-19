@@ -1,3 +1,23 @@
+## 19/8/2018
+
+### Post voting system
+
+Today we had a 30' meeting with Prof. Kiayias. We clarified the way in which we can carry
+over parts of Andrés's dissertation and that Andrés should carry on with Related Work.
+
+We then focussed on a question I had on the proof: There is a degenerate edge-case that
+needs separate treatment. The choice was between explicitly excluding this edge-case and
+dedicating more time to prove non-convergence. We decided that excluding it is easier; a
+relevant Remark should explain these limitations after the Steem system definition.
+
+Lastly, we laid out the details of the content Simulation section. In particular, it will
+contain:
+1. One or two plots (t-convergence and kendall-tau) for the case of likeabilities of
+   uniform distribution and (maybe) a different set of likeabilities (e.g.
+   player-affinity)
+1. A plot (size of voting ring - relative/absolute gain in position) for the case when
+   there exist selfish players.
+
 ## 18/9/2018
 
 ### Post voting system
