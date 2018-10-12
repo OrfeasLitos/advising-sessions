@@ -1,4 +1,70 @@
-## 19/9/2018
+## 12/10/2018
+
+Today we had a 40' meeting with Prof. Kiayias. We dedicated most of the time on payment
+networks and briefly discussed DAG-based transaction systems.
+
+### Payment Networks
+
+First, I let Prof. Kiayias know of my progress in formalising the channel open protocol in
+Lightning. In particular, I showed him the figure of the messages of the protocol and
+ensured that the `broadcast` and `fundingCreated` messages do not involve the Environment,
+but F_Ledger. I also mentioned the many layers of non-intuitive complexity that is
+leveraged to enable the Lightning protocols and justified it with the need for
+backwards-compatible changes.
+
+We then discussed the state of F_PayNet. Prof. Kiayias observed that the opening and
+closing of channels express the desired properties, but the channel update does not. In
+particular, the update procedure should reflect the fact that each successful update done
+by a player that aims to achieve a ``tx'' results in the functionality sending a
+``receipt'' to each relevant party. The process should be provably fast in the
+semi-synchronous setting, e.g. O(\[payment path length\] \* \[network delay\]). Any party
+should then be able to use her receipts and txs to create and send a single transaction to
+F_ledger which spends the opening transaction in a way that ensures that at a certain
+predetermined moment in the future she will be able to spend the amount of coins promised
+by the txs.
+
+Afterwards, we focussed on some details around payment routing. We specifically decided
+that each payment should be initiated with the Environment specifying (among other things)
+the exact path to the paying party; that subsequent hops should accept to route the
+payment if they have enough capacity in the respective channel (i.e. they will _not_ ask
+the Environment whether to route or not, but decide locally). This ensures that payments
+happen in an atomic manner. We thus avoid the case of concurrent mutually-invalidating
+multi-hop payments. A corrupt hop can of course refuse routing and thus possibly partition
+the network. A relevant guarantee should be that no honest participant can lose money
+whatever the corrupt hops do.
+
+### DAG systems
+
+I then briefly exposed my ideas on DAG-based transaction systems. In particular I
+mentioned the two properties that I deemed relevant: First, that each tx creator decides
+how much PoW to provide and pays or is paid according to this choice. Second, that each tx
+creator chooses to validate all ``new'' tip transactions, i.e. all transactions that in
+turn validate transactions that were ``new`` at the time.
+
+Prof. Kiayias commented on the difficulty of creating a new protocol from scratch and
+added that he rather had in mind attacking a DAG-based cryptocurrency. We however agreed
+that this could be a futile effort, since these protocols are under-documented and thus
+require a great effort to understand their inner workings, the level of formalism is such
+that most claimed attacks could be debunked as ``not pertaining to the model'' or ``highly
+unlikely'' (except for a very specific and possibly expensive double-spend attack) and
+finally the foundations controlling such cryptocurrencies can easily change the protocol,
+making the whole process a moving target.
+
+Lastly, we discussed briefly on Prof. Kiayias's ``parallel chains'' work. He briefly let
+me know of the optimal network usage results and some of its techniques. He then added
+that the as-of-yet unsolved issue (and the possible relevance of DAG-based systems) is
+that the number of chains is decided before the system starts its operation, based on the
+network conditions. The latter are assumed to be stable. Nevertheless, in real-world
+circumstances, the network conditions could vary and thus the number of chains too. This
+idea makes the concept of DAG-based systems relevant. It is still unclear how to leverage
+them though.
+
+We decided that these two projects (payment networks and DAG systems) are rather
+incompatible and that I should choose to focus on payment networks given the intuition and
+previous work I have already made on this front. We should however have in mind the other
+project for the future.
+
+## 19/8/2018
 
 ### Post voting system
 
