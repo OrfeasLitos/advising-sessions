@@ -1,3 +1,29 @@
+## 22/10/2018
+
+### Ledger Functionality
+
+Today we had a 2:15' meeting with Prof. Kiayias, Thomas Kerber and Dimitris Karakostas on
+the implementation of a new, simplified Ledger Functionality. We started from scratch and,
+based on previous work that Thomas had done, designed a complete, new functionality with
+clearer and simpler semantics, along with a new liveness guarantee. The functionality is
+parametrised by only one algorithm, namely isValid(state, tx). Dimitris was assigned the
+responsibility of writing down the functionality.
+
+### Payment Networks
+
+Following the previous meeting, me and Prof. Kiayias had a 15' discussion on the progress
+of F_PayNet. In particular, we decided that the handling of the ``pay'' message is now
+done correctly. On the other hand, the handling of the ``close'' message has to be
+improved. In particular, the true mechanics of parties being able to close to an old
+channel state, whilst other parties are given the chance to broadcast a newer state within
+a predefined time frame (as read from G_Clock) should be explicitly described. The time
+frame should be specified upon opening the channel.
+
+Lastly, we agreed that it is not needed to give the parties the option to decide the
+minimum_depth parameter (which defines how deep the opening transaction should be buried
+before considering the channel open), but instead rely on the states of each individual
+player for that.
+
 ## 12/10/2018
 
 Today we had a 40' meeting with Prof. Kiayias. We dedicated most of the time on payment
