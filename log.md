@@ -12,8 +12,8 @@ responsibility of writing down the functionality.
 ### Payment Networks
 
 Following the previous meeting, me and Prof. Kiayias had a 15' discussion on the progress
-of F_PayNet. In particular, we decided that the handling of the ``pay'' message is now
-done correctly. On the other hand, the handling of the ``close'' message has to be
+of F_PayNet. In particular, we decided that the handling of the "pay" message is now
+done correctly. On the other hand, the handling of the "close" message has to be
 improved. In particular, the true mechanics of parties being able to close to an old
 channel state, whilst other parties are given the chance to broadcast a newer state within
 a predefined time frame (as read from G_Clock) should be explicitly described. The time
@@ -41,8 +41,8 @@ backwards-compatible changes.
 We then discussed the state of F_PayNet. Prof. Kiayias observed that the opening and
 closing of channels express the desired properties, but the channel update does not. In
 particular, the update procedure should reflect the fact that each successful update done
-by a player that aims to achieve a ``tx'' results in the functionality sending a
-``receipt'' to each relevant party. The process should be provably fast in the
+by a player that aims to achieve a `tx` results in the functionality sending a
+`receipt` to each relevant party. The process should be provably fast in the
 semi-synchronous setting, e.g. O(\[payment path length\] \* \[network delay\]). Any party
 should then be able to use her receipts and txs to create and send a single transaction to
 F_ledger which spends the opening transaction in a way that ensures that at a certain
@@ -64,19 +64,19 @@ whatever the corrupt hops do.
 I then briefly exposed my ideas on DAG-based transaction systems. In particular I
 mentioned the two properties that I deemed relevant: First, that each tx creator decides
 how much PoW to provide and pays or is paid according to this choice. Second, that each tx
-creator chooses to validate all ``new'' tip transactions, i.e. all transactions that in
-turn validate transactions that were ``new`` at the time.
+creator chooses to validate all "new" tip transactions, i.e. all transactions that in
+turn validate transactions that were "new" at the time.
 
 Prof. Kiayias commented on the difficulty of creating a new protocol from scratch and
 added that he rather had in mind attacking a DAG-based cryptocurrency. We however agreed
 that this could be a futile effort, since these protocols are under-documented and thus
 require a great effort to understand their inner workings, the level of formalism is such
-that most claimed attacks could be debunked as ``not pertaining to the model'' or ``highly
-unlikely'' (except for a very specific and possibly expensive double-spend attack) and
+that most claimed attacks could be debunked as "not pertaining to the model" or "highly
+unlikely" (except for a very specific and possibly expensive double-spend attack) and
 finally the foundations controlling such cryptocurrencies can easily change the protocol,
 making the whole process a moving target.
 
-Lastly, we discussed briefly on Prof. Kiayias's ``parallel chains'' work. He briefly let
+Lastly, we discussed briefly on Prof. Kiayias's "parallel chains" work. He briefly let
 me know of the optimal network usage results and some of its techniques. He then added
 that the as-of-yet unsolved issue (and the possible relevance of DAG-based systems) is
 that the number of chains is decided before the system starts its operation, based on the
@@ -172,7 +172,7 @@ our setting.
 ### UC-Trust
 
 The first 15' we talked about a misunderstanding of mine with respect to the definition of
-the set of all ``good'' simulators, C\_A. The current definition given is correct, I will
+the set of all "good" simulators, C\_A. The current definition given is correct, I will
 have to look more into it to clear up my misunderstanding. We then gave a thorough
 explanation of our current approach to using the framework. Dr. Zikas at first commented
 that giving the Environment the ability to choose payoffs would mean that the notion of
@@ -936,7 +936,7 @@ from most to least important:
    said desire.
 6. Change message(a, b, c) to (message, a, b, c) for readability.
 7. Fix a small semantic problem in the last 5 lines of the reaction of Pi_SAT to a
-   ``satisfy'' message.
+   `satisfy` message.
 
 ## 8/2/2018
 
