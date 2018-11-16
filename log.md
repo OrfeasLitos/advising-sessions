@@ -1,3 +1,47 @@
+## 16/11/2018
+
+### Payment Networks
+
+Today we had a 40' remote meeting with Prof. Kiayias. We focussed entirely on Payment
+Networks. I first showed him a candidate validate(state, tx) specification, which would
+simplify the operations currectly offered by Bitcoin without effectively reducing the
+types of transactions that can be made. Furthermore, it suits our use case very well,
+without adding unneeded complexity. Prof. Kiayias found the specification sound.
+
+We then delved into the details of the newly introduced changes to F_PayNet. In
+particular, I first explained that the LND implementation only supports opening channels
+that are funded from one of the two participants; this is a limitation that simplifies the
+code and improves the user experience, as the other party need not manually confirm or
+reject the opening of the channel. Our model however supports channels that are initially
+funded by both participants. This introduces one more message for the functionality to
+accommodate, namely acceptChannel. We agreed to keep our model this way, but if this
+addition makes the analysis too hard, we should be ready to simplify it. Prof. Kiayias
+also proposed allowing for both types of channel opening as a future extension.
+
+Afterwards, we discussed the actions the functionality takes upon receiving an
+acceptChannel message. Prof. Kiayias had two important objections. Firstly, the
+functionality does not have to return to the players a detailed set of elements needed to
+reproduce the protocol externally (such as public-private keys), just a unique receipt and
+the end-user information (such as channel balance). Secondly, the functionality should not
+add transactions to the buffer, but confine itself to keeping track of what channels exist
+locally. It is the job of the simulator to submit transactions to the ledger in order to
+simulate the real world as needed, so whenever the functionality now builds a transaction
+and adds it to the ledger, it should instead simply send a message with the relevant
+information to the simulator. Another minor comment was that I should better use the
+command "return" instead of "send" for messages that are transmitted to the players by the
+functionality. Given the semantics of "return", it should happen en masse as the last
+action before the functionality returns the control to other ITMs.
+
+We then briefly discussed whether we should also employ the invoicing system of LND. I
+described how a payment in LND is made: First the receiver creates an invoice through LND
+and sends it out-of-band to the payer. Then the payer completes the payment through LND.
+On the other hand we avoid the first step; the payer directly specifies who and how much
+to pay, and through which nodes to route the payment. We agreed that this approach is
+simpler and clearer, so we should not change it to look like LND.
+
+Lastly, we agreed to meet early next week to discuss further progress on the functionality
+and our course of action regarding the "Puff of Steem" paper.
+
 ## 22/10/2018
 
 ### Ledger Functionality
