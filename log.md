@@ -36,7 +36,7 @@ We then briefly discussed whether we should also employ the invoicing system of 
 described how a payment in LND is made: First the receiver creates an invoice through LND
 and sends it out-of-band to the payer. Then the payer completes the payment through LND.
 On the other hand we avoid the first step; the payer directly specifies who and how much
-to pay, and through which nodes to route the payment. We agreed that this approach is
+to pay, and through which nodes to route the payment. We agreed that our approach is
 simpler and clearer, so we should not change it to look like LND.
 
 Lastly, we agreed to meet early next week to discuss further progress on the functionality
