@@ -1,3 +1,41 @@
+## 22/11/2018
+
+Today we had a 30' meeting with Prof. Kiayias. We dedicated half of the time discussing
+the fate of "Puff of Steem" and the other half to the progress of the F_PayNet and the
+related protocol.
+
+### Post voting system
+
+We first discussed where we should aim to submit next. Since [The Web
+Conference](https://www2019.thewebconf.org/) deadline is already past, we decided to aim
+for either [Usenix Security](https://www.usenix.org/conference/usenixsecurity19) or
+[PODC](https://www.podc.org/). We agreed that in order to have a substantial probability
+of being accepted in either of these conferences, we have to:
+1. Add coins to our current model and prove our theorem there
+1. Expand to the dynamic setting, where the execution continues and posts keep coming
+   indefinitely.
+In case we submit to PODC, we will have to focus on expanding our theory, whereas in
+Usenix, simulations of real-world scenarios will be more relevant. In the latter case, we
+will have to decide upon one (or several) suitable likeability distribution(s).
+
+### Payment Networks
+
+Here we focused on two issues. Firstly, we discussed once more whether F_PayNet should
+allow only for channels initially funded by only one of the parties (as in LND) or permit
+the more robust case of allowing funding by both parties. I explained that allowing for
+the second case would make us diverge very far from the BOLT specification. Prof. Kiayias
+then suggested that we write two separate functionalities, one with the first and another
+with the second channel opening method. Only the first will be realised by the Lightning
+protocol.
+
+Secondly, we decided upon the cleanest way of introducing and managing the coins of each
+player. We decided that each player registers their public key as a first interaction with
+the functionality. The functionality reads the state of said player and decides this
+player's balance based on the coins she can spend with the corresponding private key. All
+subsequent keys for all players are generated and stored by the simulator. The coin
+balance guarantees that will be given by the functionality are maintained as long as
+players do not interact directly with G_Ledger but only through F_PayNet.
+
 ## 16/11/2018
 
 ### Payment Networks
