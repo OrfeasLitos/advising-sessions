@@ -1,3 +1,45 @@
+## 6/12/2018
+
+### Post voting system
+
+This time we had a 35' meeting with Prof. Kiayias. We discussed the transition of the
+"Puff of Steem" paper to the dynamic setting. I described the modified model:
+1. The execution pattern lasts for L rounds. In each round all players are activated. Each
+   post can be voted for R rounds. The Environment can now instruct players to post
+   instead of voting; Prof. Kiayias commented that we should have a more fine-grained
+   control over when the Environment instructs players to post, since posting on the last
+   round ensures very low visibility.
+1. The theorem does not contain the number of posts or the number of rounds anymore. It
+   is stated in such a form that L is sent to infinity, i.e. we care about arbitrarily
+   long executions.
+1. Since posts are not an input to the system but are created ostensibly by players, I
+   proposed to add an Oracle which provides "encrypted" posts to players, who in turn
+   submit them to G_Feed for "decryption" and addition to the list of posts. Prof. Kiayias
+   simplified this setup by having each player simply send the `post` message to G_Feed
+   and then G_Feed asks the Oracle for a post for the player. The specific parameters
+   passed to the Oracle and whether the latter maintains state is not yet decided. The
+   Oracle is the vehicle through which we will carry out the desired attack, by generating
+   specifically crafted posts.
+1. I proposed a method for exponential decay of both the ideal score and the real score of
+   every post as time passes. Prof. Kiayias argued that this method is too specific and
+   arbitrary; he instead proposed that we specify some properties these two functions
+   should satisfy, instead of exactly defining them. We should choose these properties so
+   that they seem plausible for a system like that (and ideally include the Steemit
+   system), but are attackable as well. We thus aim for a negative result that invalidates
+   a class of post ordering methods. Prof. Kiayias set as an ideal target to decide the
+   properties such that they cover all the interesting post ordering methods and prove
+   them unsuitable, leaving only "dumb" ordering methods that would obviously not lead to
+   useful orderings. I responded that such a proof would in practice show that there
+   exists no good post ordering system, a result that is intuitively very unlikely to
+   hold.
+
+In a followup email next morning, Prof. Kiayias commented that a positive result regarding
+decentralized content curation can possibly be achieved through a machine learning
+approach, so we should pursue this direction with some help from the ML group in the
+future. Until then, we should focus on the negative result and send to a small(er)
+confernece. He added that for February he recommends focussing on the payment channels
+paper and attempt submission to Usenix or most probably Crypto.
+
 ## 22/11/2018
 
 Today we had a 30' meeting with Prof. Kiayias. We dedicated half of the time discussing
