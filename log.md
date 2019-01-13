@@ -1,3 +1,36 @@
+## 10/1/2019
+
+### Payment Network
+
+Today we had a 45' meeting with Prof. Kiayias. We focussed on the changes that F_PayNet
+requires as a result of its separation with G_Ledger and to allow for active corruptions
+during a multi-hop payment.
+
+Regarding the channel opening, the funding transaction should be built and sent by
+F_PayNet. After submission (in Alice's name) wait for the transaction to be added to
+Alice's state in the G_Ledger (i.e. k blocks) and update internal channel state
+afterwards. Breach remedy transactions (or whatever invalidating primitive is defined in
+BOLT) should be also kept in the state of F_PayNet, so that it can always dispute honest
+players' channels that were maliciously closed on the ledger.
+
+Regarding an off-chain payment, There will be one exchange with the Simulator per hop. The
+relevant message should be defined. The timeouts for each HTLC output will be chosen as in
+spec (minimum safe values) and will not be tunable by the environment (for simplicity).
+
+Another point of interest was that, along with onChainBalance, we should define a
+offChainBalance map from players to coins and prove in every step that a coin-preserving
+invariant holds. This will give the desired money saving properties.
+
+We also discussed the proving technique that will be used for proving that the protocol
+realizes the functionality. One approach is to consider each possible "knowledge state"
+the Environment could be in. Another approach that is also used in other cryptographic
+proofs is to start with a dummy F_PayNet that pushes all messages to the Simulator, who in
+turn simply executes a separate instance of the protocol for each player (this obviously
+is indistinguishable) and then incrementally extract parts of the logic to F_PayNet and
+bound the increase to the advantage of the Adversary in each extraction step. After the
+last step, the functionality will be identical to the defined one. We will then prove that
+the sum of the incremental advantages do not result in a non-negligible total advantage.
+
 ## 10/12/2018
 
 ### Payment Network
