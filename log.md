@@ -1,3 +1,28 @@
+## 22/1/2018
+
+### Payment Network
+
+Today we had a 3-hour meeting with Prof. Kiayias. We dedicated the entire time to
+F_PayNet. We parsed the entire Functionality and made several corrections. We transferred
+several responsibilities to the Simulator and reduced the amount of checks done by
+F_PayNet to the essential minimum. In order to enforce compliance from the Simulator, the
+Functionality checks the Ledger for the necessary (or equivalent) transactions every time
+they are supposed to be found there.
+
+## 18/1/2018
+
+### Payment Network
+
+Today during the weekly meeting I made a presentation of the off-chain transactions Alice
+keeps stored while an HTLC payment is in flight. I gave a detailed description of this
+particular snapshot of the state and answered several explanatory questions. As a
+follow-up to the presentation, we had a brief discussion with Prof. Kiayias. We decided
+to greatly simplify the Functionality, because having the Functionality to store all the
+transactions and communicate with G_Ledger defeats the purpose by bringing it too close to
+the protocol. The Functionality should only ensure that the security and functional
+properties of payment networks are enforced, not actually "do the dirty work" that the
+Simulator is supposed to do.
+
 ## 10/1/2019
 
 ### Payment Network
