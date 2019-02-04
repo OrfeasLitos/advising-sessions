@@ -1,4 +1,4 @@
-## 22/1/2018
+## 22/1/2019
 
 ### Payment Network
 
@@ -9,7 +9,7 @@ F_PayNet to the essential minimum. In order to enforce compliance from the Simul
 Functionality checks the Ledger for the necessary (or equivalent) transactions every time
 they are supposed to be found there.
 
-## 18/1/2018
+## 18/1/2019
 
 ### Payment Network
 
