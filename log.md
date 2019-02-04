@@ -1,3 +1,34 @@
+## 4/2/2019
+
+### Payment Network
+
+Today we had a 50' meeting with Prof. Kiayias. We discussed message flow in the protocol
+(with complications that also affect F_PayNet) and the proof methodology. We also
+discussed how to tackle the issue of time in the protocol.
+
+First, in order to solve the issue of needing to send arbitrarily many messages after
+receiving a single message (checkNew), we decided that the Environment should ask the
+_broadcasting_ player (the one who first received openChannel by the Environment) to check
+if _one specific_ funding transaction has been added to the ledger and, if so, to inform
+the other party. This ensures that one received message corresponds to one sent message.
+
+Second, we decided to limit the number of ITMs that are registered to the clock by
+demanding that protocol instances only take the time from the information obtained by the
+ledger. This in turn means that the new, simplified version of the F_Ledger cannot be used
+(since does not return any information connected to time) and we will fall back to the old
+and established F_Ledger to use the block number as time indication. This also hinted that
+we should add a way for the new F_Ledger to signal time-related information along with
+transactions, possibly through a parametrizing procedure.
+
+Lastly, we discussed what steps should be taken to prove the desired indistinguishability.
+There are two options: either directly writing the Simulator, or to first write a dummy,
+pass through functionality that just pushes all messages to and from the Simulator, which
+in turn simply emulates all the protocol instances. We will prove indistinguishability
+there and gradually pull out to the functionality the various responsibilities, proving
+indistinguishability between every pair of subsequent versions as we progress. A new
+meeting should be scheduled once I have prepared the first, dummy version of the ideal
+world to discuss the technicalities of how to prove the desired indistinguishability.
+
 ## 22/1/2019
 
 ### Payment Network
