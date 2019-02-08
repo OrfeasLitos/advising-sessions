@@ -1,3 +1,21 @@
+## 8/2/2019
+
+### Payment Network
+
+Today we had an 1-hour meeting with Prof. Kiayias. We went to the fine details of what
+pieces of data is held by the two parties of a channel (in-depth discussion of the
+contents of local and remote commitment and HTLC transactions, along with their
+signatures) and the sequence of things that have to happen before an HTLC payment goes
+through (irrevocably revoke all states that do not contain the HTLC output on both sides).
+We also discussed the bad paths that can be taken in every step.
+
+For the first time, we discussed without going into much detail the difference between the
+absolute delays of the HTLCs and the relative delays of the delayed payment outputs. We
+understood that we have to look into it in more detail.
+
+One target we set for the next meeting is to have a clear representation of the state,
+defined separately from the protocol. This has the potential to simplify the protocol.
+
 ## 4/2/2019
 
 ### Payment Network
