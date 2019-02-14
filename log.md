@@ -3,7 +3,7 @@
 ### Payment Network
 
 Today we had an 1-hour meeting with Prof. Kiayias. We went to the fine details of what
-pieces of data is held by the two parties of a channel (in-depth discussion of the
+pieces of data are held by the two parties of a channel (in-depth discussion of the
 contents of local and remote commitment and HTLC transactions, along with their
 signatures) and the sequence of things that have to happen before an HTLC payment goes
 through (irrevocably revoke all states that do not contain the HTLC output on both sides).
