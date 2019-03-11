@@ -1,3 +1,25 @@
+## 8/3/2019
+
+### Payment Network
+
+This week we held a 45' meeting with Prof. Kiayias. We dedicated our discussion on the
+combined signature primitive definition. We first focussed on whether we should define the
+primitive with games or a functionality. After showing Prof. Kiayias my attempt for a
+functionality, we decided that it is much more straightforward to go with game-based
+security. What's more, since this primitive will live entirely within the LN protocol
+(which in turn will be proven UC-secure), so going the UC way for this primitive is not
+needed.
+
+I then described the interface of the 6 algorithms (MasterKeyGen, KeyShareGen,
+CombineKeyGen, CombinePubKeyGen, Sign, Verify) and the two correctness requirements
+(correct signature and correct public key generation). They did not need any corrections.
+The last part of our discussion focussed on the security of the scheme. Two games were
+defined, largely in the lines of the ones I had defined during the week, with minor
+corrections. Intuitively, each game guarantees the security of the two types of keypairs.
+
+Finally, we resolved that my next step should be to prove the LN combined key construction
+secure under these definitions.
+
 ## 26/2/2019
 
 ### Payment Network
