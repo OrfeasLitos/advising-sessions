@@ -1,3 +1,28 @@
+## 13/3/2019
+
+### Payment Network
+
+This week we had an 1-hour meeting with Prof. Kiayias. I reported on the meeting with and
+the work of Mario Larangeira and Maxim Jorenko. We resolved that we should not rush to
+collaborate with them, given that there isn't a part of LN with which they can help.
+
+We then moved on to discuss the combined key primitive. In particular I explained how the
+"label" is irrelevant for the key combination. I showed the steps I took to remedy that
+and Prof. Kiayias approved. He also told me how to fix the random coins of the KeyGen()
+procedures (using the randomness from the PRF) in the most straightforward manner. Another
+minor point that was mentioned was that the dummy functionality should only forward to the
+simulator messages that conform to the syntax expected by the protocol.
+
+The greatest part of our discussion was then focussed on the main proof. I walked Prof.
+Kiayias through the idealisation of the "register" phase. He verified and approved of the
+proof. The rest of the discussion was dedicated to the way that the "open" part will be
+idealised. We walked through each step in the protocol and the functionality in parallel
+and we figured out that every step in the protocol can be executed by the Simulator
+without issue. Prof. Kiayias pointed out that the Simulator should treat the 4
+combinations of the honest/malicious status of the two players separately and send the
+"channelAnnounced" message (renamed from "channelOpened") to F_PayNet at a very carefully
+selected moment, especially when the initiator of the channel is malicious.
+
 ## 8/3/2019
 
 ### Payment Network
