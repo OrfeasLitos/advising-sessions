@@ -49,7 +49,7 @@ secure under these definitions.
 
 ### Payment Network
 
-Today we had a meeting wit Prof. Kiayias that lasted 1 hour and 45'. We discussed Payment
+Today we had a meeting with Prof. Kiayias that lasted 1 hour and 45'. We discussed Payment
 Network. We first discussed how the proof will proceed to the next step. In particular we
 resolved to move the ``register'' steps to the functionality, adapt the simulator
 accordingly and prove that the modified setup generates for the Environment the same view
