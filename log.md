@@ -1,3 +1,31 @@
+## 27/3/2019
+
+### Payment Network
+
+Today we had an 1-hour and 15' meeting with Prof.Kiayias. We started our discussion with
+the approach to proving Lemma 4 (pay). Apparently the approach of simulating all honest
+parties' communications in the Simulator is right and, since the benefits provided by the
+signature primitives are not crucially enforced by the Functionality here (but in "poll"),
+the statement of Lemma 4 will hopefully be proven in its current form (i.e. with exact
+equality). The only change that has to be made in the Functionality is that it should be
+informed whether the payment was charged on Alice or the Adversary (instead of a concrete
+player), or if it did not go through at all.
+
+Almost the entire remainder of our meeting was dedicated to the proof strategy of the next
+steps. In particular we overviewed several points in the idealization of pay, close and
+poll that possibly require special care. As a prime example, we vaguely specified what
+kinds of bad events can happen if any of the signature schemes is broken and we figured
+out that under these events the ideal world would be distinguishable from the real only
+with respect to the "poll" message. Therefore the step of idealizing the "poll" message
+will not prove exact equality, but computational indistinguishability (assuming that
+signatures break with negligible probability).
+
+Other minor proposed corrections are to use the protocol symbol in the pay Simulator
+description and have the Functionality only bookkeep on the balances of honest players.
+
+We finally discussed practical matters of travelling to Paris for Tokenomics 2019,
+possible visit to Greece in May and summer vacation.
+
 ## 13/3/2019
 
 ### Payment Network
