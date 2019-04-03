@@ -2,7 +2,7 @@
 
 ### Payment Network
 
-Today we had an 1-hour and 15' meeting with Prof.Kiayias. We started our discussion with
+Today we had an 1-hour and 15' meeting with Prof. Kiayias. We started our discussion with
 the approach to proving Lemma 4 (pay). Apparently the approach of simulating all honest
 parties' communications in the Simulator is right and, since the benefits provided by the
 signature primitives are not crucially enforced by the Functionality here (but in "poll"),
