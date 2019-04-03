@@ -1,3 +1,14 @@
+## 3/4/2019
+
+### A puff of Steem
+
+Today we had a 50' meeting with Prof. Kiayias, Prof. Livshits and Andrés Mosteiro
+Monteoliva. We discussed the reviews of the papers and decided which suggestions to act
+upon and which not to. In particular we decided to expand our related work with a
+comparison with some anti-sybil mechanisms on social networks that were pointed to by one
+reviewer, as well as add a brief history of Steem and Steemit. We resolved not to add more
+simulations, or propose more attacks and their respective defenses.
+
 ## 27/3/2019
 
 ### Payment Network
