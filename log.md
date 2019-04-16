@@ -1,3 +1,36 @@
+## 16/4/2019
+
+### Payment Network
+
+Today we had an 1-hour meeting with Prof. Kiayias. We focussed on the pay-simulator. I
+noticed that the second condition in line 3 is superfluous and wrong, it has to be
+removed. Prof. Kiayias commented that in line 7 the exact time intervals when it is
+dangerous for a player to be (relay-)negligent are not clear, they should be explicitly
+specified. A minor typo that we found is that the simulator communicates with the
+functionality, not with itself.
+
+Given that this proof step covers the cases in which the Adversary could exploit any abuse
+of the primitives we use (hashes, simple signatures, combined signatures), we have to
+explicitly consider these events. In particular, the Simulator must keep tables with:
+
+ * All the hashes for which the Adversary doesn't know the preimage. A hash is added when
+   a party creates the preimage and is removed the first time the party sends the preimage
+   anywhere.
+ * All the messages that haven't been signed and the adversary could exploit. This should
+   probably contain all txs that spend an unspent output to the Adversary. Three different
+   tables should be kept: one for messages that need simple signatures, one for messages
+   that need forgery of combined signatures where the Adversary knows the master key and
+   one for messages that need forgery of combined signatures where the Adversary knows the
+   shared key.
+
+Four different bad events have to be defined and we have to prove that in each of these
+bad events, the relevant primitive is broken (thus the bad events have negligible
+probability). Under the other event, which happens with overwhelming probability, the real
+and the ideal execution must be proven identical.
+
+I also briefly mentioned that I have an idea that could possibly allow us to create
+virtual payment channels without a finite horizon on top of lightning.
+
 ## 3/4/2019
 
 ### A puff of Steem
