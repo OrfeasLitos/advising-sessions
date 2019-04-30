@@ -1,3 +1,30 @@
+## 30/4/2019
+
+### Payment Network
+
+Today we had an 1-hour meeting with Prof. Kiayias. We looked into the exact cases when
+F_PayNet decides an honest player has been wrongly charged, which led us to me explaining
+why the particular minimum block height in which Alice must poll (i.e. OutgoingCltvExpiry
+\+ 2k + fu - 1) was chosen.
+
+We assume that a transaction that is broadcast for u rounds when the chain has height h
+(as seen by the broadcasting party) is added to the blockchain at most at block h + fu +
+k. If an honest party wants to timeout an HTLC and starts broadcasting the relevant tx
+when she sees block (OutgoingCltvExpiry - 1), the Adversary can postpone this timeout
+until block (OutgoingCltvExpiry - 1 + k + fu). Thus it is possible for him to include his
+HTLC-success transaction in this block, preventing the honest party from timing out and
+postponing disclosure of the preimage as much as possible, until (OutgoingCltvExpiry - 1 +
+2k + fu).
+
+Prof. Kiayias told me that, since we are using G_Ledger, we cannot use low-level
+parameters from GKL. Furthermore, the assumption above is not correct. Prof. Kiayias will
+find the exact block that Alice has to start broadcasting a transaction in order to have
+it enter in at most a particular block in a separate lemma. In the meanwhile I'll continue
+with the proof.
+
+Lastly, we'll have to add G_Ledger to our paper. I'll add it once I receive the latex
+sources.
+
 ## 16/4/2019
 
 ### Payment Network
