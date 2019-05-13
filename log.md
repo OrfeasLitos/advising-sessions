@@ -1,3 +1,30 @@
+## 13/5/2019
+
+### Payment Network
+
+Today we had an 1-hour meeting with Prof. Kiayias. We went over a couple of points where I
+wasn't sure that my approach was correct. In particular, I mentioned that several checks
+that would happen upon receiving a message from the environment have been removed from
+F_PayNet and instead the message is always forwarded to the simulator. The actions of the
+simulator are checked after the fact and, if any check fails, the F_PayNet halts.
+Furthermore, I showed the approach taken in the simulator, according to which it simulates
+only some of the lines of the protocol and obtains the missing information from the
+activating message of F_PayNet. This happened in an attempt to mimic exactly the (READ)
+messages in the ideal world, which turns out to be superfluous but nonetheless would
+achieve security with an even weaker G_Ledger. Third, I showed him a sample of the proof
+in order to double-check that it takes a right approach that covers all bases.
+
+Subsequently we moved on to discussing the proposition involving the G_Ledger guarantees
+concerning when a party has to submit a transaction in order for it to be placed in a
+particular block range. Prof. Kiayias has provided this proposition with exact bounds and
+a formal proof. Unfortunately the proposition needs the party to act in reaction to it
+state, i.e. its k-pruned blockchain. We couldn't make it work with the party reacting to
+the latest block it sees.
+
+Lastly we discussed the final structure of the paper and which parts are missing
+(introduction, related work, etc.) A list of those is being written and filled in by Prof.
+Kiayias.
+
 ## 30/4/2019
 
 ### Payment Network
