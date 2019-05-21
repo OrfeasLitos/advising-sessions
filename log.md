@@ -1,3 +1,35 @@
+## 21/5/2019
+
+### Payment Network
+
+Today we had a 1:45' meeting with Prof. Kiayias. We went over several parts of the paper,
+identifying the core parts that still need improvement. In particular, we discussed some
+parts of the functionality that could be objectionable. The most interesting part was the
+fact that F_PayNet simply trusts the simulator when the latter announces new members to
+`closedChannels` and `updatesToReport`. We figured out that the main motivation and the
+way it is done is not perfect (still F_PayNet has to keep track of promised updates and
+closes and halt if they're not delivered, but it currently doesn't), but is certainly on
+the right track. It also gives interesting intuition on the guarantees given, specifically
+on the fact that an adversary may trick the functionality into believing anything and the
+former can only figure out the issue upon the closing of the channel.
+
+The second part of the discussion focussed on the core parts of the proof of security of
+payments. I walked Prof. Kiayias through several interesting parts of the proof. We found
+out some minor mistakes, but the most important observation was that the security against
+forgeries is currently explained in a very informal fashion. We dedicated a lot of time
+understanding how the proof should be properly done. In particular, I should define an
+adversary that, given forgery in an LN execution is possible, would win the forgery game
+with non-negligible probability. This should be repeated for each of the three forgeries
+possible and characterize thus all bad events. Subsequently, whenever we encounter a spot
+in the proof where such a forgery would break security, we move to the conditional space
+where such a forgery does not happen. In this way it will be possible to prove security
+completely formally and give explicit security bounds (instead of merely proving
+computational security).
+
+In the process of the previous discussion, various other deficiencies of the proof were
+uncovered, such as the fact that a number of possible forgeries are not mentioned. We aim
+to submit to TCC.
+
 ## 13/5/2019
 
 ### Payment Network
