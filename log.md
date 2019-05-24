@@ -1,3 +1,13 @@
+## 24/5/2019
+
+### Payment Network
+
+Today we had a 1:10' meeting with Prof. Kiayias. We decided on the general paper
+structure and the contents and ordering of each section. We also discussed the need for an
+explicit description of our version of the IBS, the addition of a new algorithm for
+generating a public key from a private key for the combined signature scheme and the proof
+technique to reduce a rogue transaction during execution to a forgery attack.
+
 ## 21/5/2019
 
 ### Payment Network
