@@ -1,3 +1,15 @@
+## 27/5/2019
+
+Today we had an 1-hour meeting with Prof. Kiayias. We discussed all loose ends of the
+submission. In particular we rephrased some parts and reviewed the structure and contents
+of both the main part and the appendix. Prof. Kiayias focussed then on the exact polling
+time bounds on players and in the process uncovered an artefact in the current
+functionality and protocol: some delays use the parameter "k" from GKL, even though this
+parameter does not appear in G_Ledger. I thus promised to review these details and
+rephrase the proof accordingly where needed. We figured out that the only other remaining
+parts are the Introduction, the Conclusion, the reduction of our security to the 4
+signature games and, if time permits, the proof of security of the IBS construction in LN.
+
 ## 24/5/2019
 
 ### Payment Network
