@@ -1,3 +1,29 @@
+## 4/6/2019
+
+Today we had an 1-hour meeting with Prof. Kiayias. We discussed some changes to the
+Payment Network paper before uploading it to eprint and the candidate upcoming projects.
+
+### Payment Network
+
+I will do the following edits before submitting to eprint. First, I will give a clearer
+and more detailed but still high-level explanation of the security guarantees and the
+specific time limits for non-negligence in the overview of F_PayNet. This may subsequently
+lead to a simplification of the Introduction. Second, I will do a more thorough literature
+review and argue why their version of the world is too simplistic for each paper
+separately. Third, I will add a reference (or more) to [12] in the Combined Signatures
+overview.
+
+### Future projects
+
+The candidate projects for my thesis are, in rough order of completion probability:
+* G_Ledger simplification
+* Virtual channels for bitcoin
+* Privacy for payment and state channels
+* New blockchain with layer 2 in mind
+* Steemit on channels
+* Content curation classification
+* Optimal decentralized content curation with Machine Learning
+
 ## 27/5/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias. We discussed all loose ends of the
