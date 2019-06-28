@@ -1,3 +1,25 @@
+## 28/6/2019
+
+Today we had a 50' meeting with Prof. Kiayias. We discussed the latest changes to the
+Payment Network paper and my progress in the Virtual Payment Channels for Bitcoin.
+
+### Payment Network
+
+We reviewed the latest changes: related work on combined signatures and UC payment
+channels, negligent behaviour definition on F_PayNet. The first two do not need any
+changes, but the latter is still too cryptic. Prof. Kiayias suggested expanding it and
+explaining each term separately to avoid confusing the reader, without removing any part
+of the information given. After this change the paper will be ready for submission to
+eprint.
+
+### Virtual LN
+
+I briefly presented the main idea behind virtual payemnt channels and started describing
+my candidate solution for the case where one virtual channel is established over two
+normal ones. We did not have enough time to go over the whole system. Prof. Kiayias
+commented that it looks like these are simple enough ideas and it is rather surprising
+that they have not been pursued by the creators of Lightning yet.
+
 ## 4/6/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias. We discussed some changes to the
