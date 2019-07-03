@@ -1,3 +1,11 @@
+## 3/7/2019
+
+Today we had an 1-hour meeting with Prof. Kiayias. We added the final touches to the
+Payment Network paper before submitting to eprint, which consisted of minor rephrasings
+and clarifications of the explanation of negligence for multi-hop payments. I also
+presented my scheme for virtual payment channels on Bitcoin. Prof. Kiayias understood it
+and did not see an issue with it, but suggested that I should start writing up.
+
 ## 28/6/2019
 
 Today we had a 50' meeting with Prof. Kiayias. We discussed the latest changes to the
