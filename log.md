@@ -1,3 +1,18 @@
+## 24/7/2019
+
+### Virtual Payment Channels
+
+Today we had an 1-hour meeting with Prof. Kiayias. I described to him the desired
+architecture where each payment channel is a separate functionality. The main problem
+that we met was that the traditional encapsulation that UC imposes between functionalities
+could not be respected: UC demands that the Environment cannot communicate with a local
+hybrid functionality of a protocol, but in our case the Environment should be able to
+directly communicate with a base channel functionality (e.g. to do a payment in the base
+channel) that is also used as a hybrid by a virtual channel protocol.
+
+Prof. Kiayias recognised the issue and proposed that I read [Universal Composition with
+Joint State](https://eprint.iacr.org/2002/047) as a possible solution.
+
 ## 3/7/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias. We added the final touches to the
