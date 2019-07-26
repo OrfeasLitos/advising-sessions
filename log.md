@@ -1,3 +1,47 @@
+## 26/7/2019
+
+Today we had an 1-hour meeting with Prof. Kiayias. Initially, we briefly discussed our
+response to an email we received from Tyler Wellener from BlockVenture Coalition, who
+expressed interest in meeting us regarding our work on Lightning Payment Channels
+formalisation. We decided that I should schedule a meeting with the two of us.
+
+### Virtual Payment Channels
+
+We first discussed why the candidate model where the virtual channel protocol uses one or
+more base channel functionalities as hybrids cannot be expressed in
+[JUC](https://eprint.iacr.org/2002/047) terms. The reason is because, in order to
+manipulate the base channel directly, the Environment needs a direct communication channel
+with the corresponding functionality. Unfortunately such a channel is not allowed by JUC.
+We also came to the same conclusion for the case where there exists one generic channel
+functionality for both the virtual and the base ones. In this case, the needed
+dependence/communication between a virtual and a base channel functionality is not allowed
+by JUC.
+
+We then tried to draw architectural inspiration from the way such a project would be
+modularised in the case of a software implementation, especially given the structure of
+the virtual channels construction. After some thought, I proposed the following structure:
+a channel module has an interface towards its user and one towards its foundation.
+If it is a base channel, the foundation is the Ledger. If it is a virtual channel (or a
+channel that previously was a simple base channel but now "supports" a virtual on top of
+it), the foundation is a "bridge" module. The foundation of the "bridge" module itself is
+the Ledger. This way, the channel module does not have to explicitly know whether it
+directly "sits" upon a ledger or if it is proxied by a "bridge" module instead.
+
+It now remains to be seen whether the bridge and the channel modules can be combined in an
+intuitive way in order to achieve recursive building of channels and how easily such an
+architecture can be made compatible with UC.
+
+### Ouroboros Predict-Time
+
+I brought to Prof. Kiayias' attention a minor issue in the proof of existence of
+predict-time_OG. In particular, it claims that one MAINTAIN-LEDGER message is enough to
+reach the end of the LedgerMaintenance() procedure, which is incorrect. In order to
+rectify the mistake, F_VRF has to send "restricting" requests for signatures to the
+Adversary (in order to avoid a situation where the Adversary does not necessarily
+immediately sign and thus the number of needed MAINTAIN-LEDGERs is unknowable) and the
+correct number of MAINTAIN-LEDGERs needed for LedgerMaintenance() to complete a run has to
+be calculated and put in the proof.
+
 ## 24/7/2019
 
 ### Virtual Payment Channels
