@@ -1,3 +1,16 @@
+## 13/9/2019
+
+Today we had a 40' meeting with Prof. Kiayias. I let him know of my
+[Cerberus](https://github.com/orfeaslitos/cerberus-script) work with Zeta Avarikioti which
+we plan to submit to FC and he told me that he will not go over the paper, but he allows
+me to go ahead and submit (without him being a co-author). We then moved on to discussing
+the last pending issues of the Payment Channels paper, which we plan to resubmit to CSF. I
+showed him the transaction figures, the prose explaining F_PayNet and my attempt to
+showing that our approach is general enough. I promised to explain the LN protocol in
+prose, to add the cooperative closing process and to attempt to find a simple way in which
+the "too ideal" ledger functionality breaks. I will also have to move to a 2-column
+format.
+
 ## 26/7/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias. Initially, we briefly discussed our
