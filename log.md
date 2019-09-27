@@ -1,3 +1,22 @@
+## 27/9/2019
+
+Today we had a 1-hour meeting with Prof. Kiayias, which we dedicated to discussing the
+attack against the perfect ledger (i.e. the ledger that provides instant finality). This
+will become a theorem that will be part of of the Payment Channels paper, supporting our
+choice to use the complicated but realistic G_Ledger instead of the perfect ledger. In
+particular the theorem will claim that there exists no protocol that realises the perfect
+ledger, given a synchronous multicast network.
+
+Our discussion revolved around the attack and the proof, which was not yet complete. In
+particular, I had already pinpointed that the attack should exploit the fact that an
+honest player that finds a new transaction on the network cannot afford not to add it to
+her local ledger (otherwise it would break instantaneousness), but at the same time risks
+to add to her ledger a transaction that the Adversary has sent only to her. Prof. Kiayias
+pointed out some mistakes in the current formulation and we looked for some ways to
+formally tackle the issue, but we did not manage to reach a specific attack. We
+nevertheless came to the conclusion that such an attack would be a matter of just a little
+thought to come up with.
+
 ## 13/9/2019
 
 Today we had a 40' meeting with Prof. Kiayias. I let him know of my
