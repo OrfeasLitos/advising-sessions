@@ -1,3 +1,35 @@
+## 11/10/2019
+
+Toady we had a 50' meeting with Prof. Kiayias. We discussed some new ideas on the modular
+ledger design and a new project regarding Lightning and privacy.
+
+### Modular Ledger Design
+
+Our discussion focussed on the idea that a virtual channel protocol that uses two basic
+channel functionalities F_bch as hybrids. Prof. Kiayias was skeptical of the decision to
+also intercept the communication between F_bch and G_Ledger with the virtual channel
+protocol Pi_vch, especially because this would either mean that its messages should
+possibly be changed so much to make them suitable for the blockchain, that it would make
+more sense to build them from scratch in Pi_vch, or that we would have to somehow allow
+F_bch to sign messages for transactions that don't yet exist on-chain, which could
+possibly have a negative effect on the security of F_bch. Nevertheless, we should still
+push towards that direction.
+
+### Private LN
+
+We discussed about a new project regarding privacy in Lightning. In this work, as a first
+step, we would aim to modify F_PayNet so as to leak as little data as possible to the
+simulator for each payment, in an effort to formalise what privacy guarantees are
+conceivable and what is the minimum amount of data that can be leaked. F_PayNet should not
+use cryptography internally or inject cover traffic -- we should find a more elegant way
+to achieve the desired leakage minimisation instead. The tough problem to solve here would
+be how to ask from the simulator to build and sign a particular transaction without it
+undestanding who is paying whom. To that end, it may be helpful to use a private
+underlying ledger. Additionally, Prof. Kiayias recommended that I read [A Universally
+Composable Framework for thePrivacy of Email
+Ecosystems](https://eprint.iacr.org/2018/848.pdf) in preparation for the meeting with Nym
+next week.
+
 ## 27/9/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias, which we dedicated to discussing the
