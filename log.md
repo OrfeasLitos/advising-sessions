@@ -1,6 +1,6 @@
 ## 27/9/2019
 
-Today we had a 1-hour meeting with Prof. Kiayias, which we dedicated to discussing the
+Today we had an 1-hour meeting with Prof. Kiayias, which we dedicated to discussing the
 attack against the perfect ledger (i.e. the ledger that provides instant finality). This
 will become a theorem that will be part of of the Payment Channels paper, supporting our
 choice to use the complicated but realistic G_Ledger instead of the perfect ledger. In
