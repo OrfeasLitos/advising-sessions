@@ -1,3 +1,24 @@
+## 17/10/2019
+
+Today we had an 1-hour 30' meeting with Prof. Kiayias. In the first hour we had a video
+conference with Claudia and Harry. We there discussed various privacy desiderata and
+constraints of the Lightning Network, along with broad ideas on how the Nym mixnet would
+mitigate some of the problems. In particular, the mixnet would greatly help in mitigating
+attacks by a global passive adversary, but, due to the (mostly) public nature of LN nodes
+and the fact that multi-hop payments cannot be avoided, mixnets cannot provide
+satisfactory protection against active local adversaries.
+
+The resolution of the last 30' was that as a taster, I should write the protocol that
+realises the [leakage-free
+F_PayNet](https://github.com/OrfeasLitos/privacy-ln/raw/90c9ef83c75560cf1f4887f384f9a962d1312b87/privacy-ln.pdf)
+assuming a pairwise anonymous network channel functionality, just to show that it is
+possible.
+
+Prof. Kiayias also mentioned that I should give a brief explanation of simulation-based
+security and highlight how much simpler and more abstract F_PayNet is compared to the full
+Lightning specification in my talk at the [Lightning
+Conference](https://thelightningconference.com).
+
 ## 11/10/2019
 
 Toady we had a 50' meeting with Prof. Kiayias. We discussed some new ideas on the modular
