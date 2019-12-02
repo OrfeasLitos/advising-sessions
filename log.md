@@ -1,3 +1,39 @@
+## 2/12/2019
+
+Today we had an 1-hour meeting with Prof. Kiayias. I described my latest idea, in which we
+aim for unlinkability (ideal privacy) of layer-2 payments in Bitcoin, i.e. layer-2 money
+transfers should not leak any information on neither the Bitcoin public key from which the
+layer-2 coins came, nor the IP address of anyone involved. Furthermore, multi-hop payments
+should maintain sender and receiver privacy from intermediate hops.
+
+To achieve this, a party transfers its coins to a special address with a special tx and
+obtains a public-secret keypair. He can use this key to open a channel with another LN
+public key, by publishing another transaction. Off-chain payments can now happen, and one
+more on-chain tx closes the channel. One last on-chain tx moves the money from the
+aforementioned special address back to a usual bitcoin address.
+
+All transactions that happen inside the described system (both on- and off-chain) involve
+SNARKs, so that only minimal information about the validity of the tx is leaked, much like
+Zcash, therefore whatever happens in the system is unlinkable to bitcoin addresses. All
+messages sent inside the described system are routed exclusively through a perfect
+anonymous network, thus it is impossible to link layer-2 addresses to IP addresses.
+Furthermore, surbs (single use response blocks) are used to route a message back to the
+sender anonymously, so privacy is maintained within the layer-2 network. Last, to avoid
+linkability due to the use of a single hash per payment route, we would have to employ a
+scalar/payment point solution instead of the one used currently in LN.
+
+Prof. Kiayias thought this construction is sensible, but there are various parts (e.g. the
+CRS update procedure) that may make it impractical. He also expressed concern regarding
+whether there is any substantial contribution, or if this constitutes just a
+straightforward combination of existing technologies. In order to verify this, he
+suggested that I read [Bolt](https://acmccs.github.io/papers/p473-greenA.pdf), [ZK
+contingent payments](https://eprint.iacr.org/2019/964) and [Decentralized Anonymous
+Micropayments](https://eprint.iacr.org/2019/964).
+
+In the last 5' I mentioned briefly the progress of the atomic asset swap project, on which
+we are enabling atomic selling of digital goods for Bitcoin, while optimising the
+pessimistic case.
+
 ## 17/10/2019
 
 Today we had an 1-hour 30' meeting with Prof. Kiayias. In the first hour we had a video
