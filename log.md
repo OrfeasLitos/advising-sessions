@@ -1,3 +1,10 @@
+## 24/1/2020
+
+Today we had a 35' meeting with Prof. Kiayias. We discussed the reviewers' comments on the
+[Lightning
+Network](https://github.com/OrfeasLitos/PaymentChannels/blob/master/paymentChannels.pdf)
+paper and decided on an answer to each. We are optimistic.
+
 ## 2/12/2019
 
 Today we had an 1-hour meeting with Prof. Kiayias. I described my latest idea, in which we
