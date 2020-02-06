@@ -1,3 +1,9 @@
+## 6/2/2020
+
+Today we had a 30' meeting with Prof. Kiayias. We went over the response to the LN paper
+reviewers in CSF and agreed on the last edits to this response and to the paper before
+submission.
+
 ## 24/1/2020
 
 Today we had a 35' meeting with Prof. Kiayias. We discussed the reviewers' comments on the
