@@ -1,3 +1,20 @@
+## 2/3/2020
+
+Today we had a 35' meeting with Prof. Kiayias. We discussed future steps in my research.
+
+* LN privacy: We reiterated a research direction here: what is the most private possible
+  version of an LN functionality, given an anonymous communication channel as hybrid?
+* Virtual payment channels: We reviewed the idea of building channels on top of channels
+  and how that can be modelled in UC. If it cannot be modelled in a modular way, there may
+  be room for a new generic UC theorem for combining small protocols into big ones more
+  freely. This is the primary focus for now.
+* Hydra & Ethereum rollup: Prof. Kiayias proposed that I work on allowing various Hydra
+  heads to work with each other. Rollup from Ethereum may be of interest here.
+
+Bitcoin snarks, rational miners at the tx-fee regime, a potential talk at the Stirling
+University for Andrea Bracciali and the project on selling data over Bitcoin were
+mentioned as well.
+
 ## 6/2/2020
 
 Today we had a 30' meeting with Prof. Kiayias. We went over the response to the LN paper
