@@ -1,3 +1,24 @@
+## 15/5/2020
+
+Today we had a 1h10' meeting with Prof. Kiayias. We discussed the progress in the virtual
+payment channels project. We delved into the details of which machines are subsidiaries of
+which ones and which machines can pass input to which. A flat and a tree-like addressing
+scheme were discussed. We agreed to use the flat addressing sheme so as to avoid imposing
+any unnecessary structure. We highlighted that a virtual channel party should be considered as
+"resident" of the same computer as the channel that funded it and they can therefore pass
+freely inputs and outputs to one another. This does not contradict the necessary
+"subroutine-respecting" property of UC protocols.
+
+We also came to the conclusion that, in a specific case, independent channel parties
+should be considered as "residents" of the same computer, because the balance security
+guarantees are given with respect to the sum of their funds, not with respect to the funds
+of each channel party individually. Specifically, this happens when an intermediary D
+facilitates the opening of a virtual channel on top of its own channel: D may have to pay
+one of the two parties of the virtual channel, but these funds would be replenished in
+another channel that exists in the same computer as D, and thus belong to the same "user".
+In this case balance security should not be violated. Therefore, balance security should
+be defined with respect to groups of parties and not with respect to individual parties.
+
 ## 2/3/2020
 
 Today we had a 35' meeting with Prof. Kiayias. We discussed future steps in my research.
