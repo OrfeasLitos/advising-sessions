@@ -1,3 +1,14 @@
+## 22/5/2020
+
+Today we had a 30' meeting with Prof. Kiayias. I explained that the current communication
+between a virtual and its parent channel makes the protocol not subroutine respecting. We
+discussed three possible solutions: a tree structure of the protocols, a "local
+communication" functionality and [Multi-Protocol
+UC](https://eprint.iacr.org/2019/065.pdf). The functionality was rejected as it adds an
+assumption and is somewhat non-standard. We decided to try going forward with the tree
+structure and, if an unforseen problem or complexity comes up, we will consider the
+Multi-Protocol UC approach.
+
 ## 15/5/2020
 
 Today we had a 1h10' meeting with Prof. Kiayias. We discussed the progress in the virtual
