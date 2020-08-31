@@ -1,3 +1,14 @@
+## 31/8/2020
+
+Today we had an 1-hour meeting with Prof. Kiayias. I presented the overarching
+architecture of the recursive channels construction, along with the low-level details and
+implementation problems that have been at the centre of my work these weeks. In
+particular, we decided that we should avoid the multiple alternative modes for opening
+virtual channels for the sake of clarity and brevity, and leave such optimisations as
+implementation details. Prof.  Kiayias agreed with the overall architecture, timeline and
+structure of the paper. It was mentioned that the recursive nature of the channels should
+be emphasized in the final paper.
+
 ## 22/5/2020
 
 Today we had a 30' meeting with Prof. Kiayias. I explained that the current communication
