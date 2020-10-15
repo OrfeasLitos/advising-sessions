@@ -1,3 +1,13 @@
+## 15/10/2020
+
+Today we had an 1:30' meeting with Prof. Kiayias. We mainly discussed how to make a simple
+channels functionality. We decided that the best approach is for the simulator to handle
+all low-level details (including private keys) and for the functionality to just check
+that the on-chain footprint is as expected and halt otherwise.
+
+We also decided that I should write one more paper before I complete my thesis, probably
+porting Cerberus Channels to Cardano's Hydra.
+
 ## 31/8/2020
 
 Today we had an 1-hour meeting with Prof. Kiayias. I presented the overarching
