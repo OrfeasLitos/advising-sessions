@@ -1,3 +1,17 @@
+## 25/1/2021
+
+Today we had a 3:30' meeting with Prof. Kiayias. We dedicated almost the entire meeting to
+Recursive Virtual Payment Channels for Bitcoin, where each part of the protocol was
+discussed and scrutinised. After this meeting Prof. Kiayias has a much deeper
+understanding of the protocol both at an intuitive level and regarding its details and is
+much more confident for its security.
+
+I also asked whether secret sharing is homomorphic (specifically whether the
+reconstruction of the sum of homomorphic ciphertexts that come from encrypting individual
+shares yields the sum of the plaintext values), to which Prof. Kiayias answered in the
+affirmative, mentioning that the property is provided by Shamir's secret sharing
+construction without modification.
+
 ## 15/10/2020
 
 Today we had an 1:30' meeting with Prof. Kiayias. We mainly discussed how to make a simple
