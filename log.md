@@ -1,3 +1,8 @@
+## 22/2/2021
+
+Today we had a 40' meeting with Prof. Kiayias. We discussed future employment prospects
+and relevant actions, along with introspection and decisions I'll have to make.
+
 ## 25/1/2021
 
 Today we had a 3:30' meeting with Prof. Kiayias. We dedicated almost the entire meeting to
