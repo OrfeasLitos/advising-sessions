@@ -1,3 +1,33 @@
+## 9/3/2021
+
+### Democratic Decisionmaking
+
+Today we had a 1-hour meeting with Aggelos Kiayias and Vanessa Teague. Our discussion
+revolved around specifying the functionality for the simulation-based analysis. We decided
+that each party will be able to input an "engage" message (either vote or decrypt) which
+changes the state and a "read" message which reads the state and returns all the decrypted
+votes.
+
+## 25/2/2021
+
+### Democratic Decisionmaking
+
+Today we had a 1-hour meeting with Aggelos Kiayias and Vanessa Teague. We discussed the
+current version of the security game and we surfaced a couple of issues.
+
+* Is one player or all players activated per round? This is not just a matter of names, as
+  it affects:
+  - whether the choice of vote receivers [1] happens with local or global randomness,
+  - whether the scheduling of voting is important or not.
+* How do we handle missing votes? Some ideas are on the table, but they may be
+  insecure/inefficient.
+
+We also decided to move to a simulation-based approach, because it will highlight better
+the interactions between parties, as well as make it easier to model leakage. Aggelos has
+the token on making the first steps towards this change.
+
+[1] A receiver is a party for which an encrypted share of a vote is addressed.
+
 ## 22/2/2021
 
 Today we had a 40' meeting with Prof. Kiayias. We discussed future employment prospects
