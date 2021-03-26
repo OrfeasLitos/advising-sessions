@@ -1,3 +1,12 @@
+## 23/3/2021
+
+### Democratic Decisionmaking
+
+Today we had a 1-hour meeting with Aggelos Kiayias and Vanessa Teague. We discussed the
+privacy guarantees (which will provide some kind of weak vote liveness), the verifiable,
+oracle-seeded randomness that is needed to avoid receiver biasing and the one vote per
+round semantics in the functionality.
+
 ## 9/3/2021
 
 ### Democratic Decisionmaking
