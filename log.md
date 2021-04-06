@@ -1,3 +1,26 @@
+## 6/4/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Aggelos Kiayias. We mainly discussed the
+functionality. We first focussed on the behaviour of the functionality when a vote is
+cast. We decided that the O_{n,P} oracle models the verifiably random selection of
+decryptors satisfactorily, but that we can try giving more leeway to the adversary by
+allowing it to choose the decryptors on every vote. The functionality should then keep
+track of the leakage and halt/use verifiably random decryptor selection if the leakage is
+too high. We also added a check whether there are t malicious parties in the set of
+decryptors, in which case the functionality leaks the vote. This leakage is needed to
+match the protocol. We observed that in the opposite case in which there are at most t-1
+malicious parties among the decryptors, the simulator can put random instead of correct
+ciphertexts in the ledger and this will still be indistinguishable from what the protocol
+does.
+
+We then moved on to the drainBatch message, where we discussed how is the batch decided.
+Because of possible leakage when overlapping batches are selected in a malicious way, we
+decided not to delegate the batch selection task to the adversary nor the environment but
+to instead use an as-of-yet-unspecified deterministic algorithm (which takes a sequence of
+groups of decryptors and returns a partition of voting rounds into valid batches) instead.
+
 ## 23/3/2021
 
 ### Democratic Decisionmaking
