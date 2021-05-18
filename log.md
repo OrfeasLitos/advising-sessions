@@ -1,3 +1,11 @@
+## 28/4-7/5/2021
+
+### Elmo
+
+Prof. Aggelos Kiayias and I were communicating mainly asynchronously via text (with some
+brief calls when needed) throughout this period in order to discuss and finalise the
+submission to CCS.
+
 ## 6/4/2021
 
 ### Democratic Decisionmaking
