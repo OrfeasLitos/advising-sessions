@@ -1,3 +1,16 @@
+## 18/5/2021
+
+### Democratic Decisionmaking
+
+Today we had a 45' meeting with Prof. Aggelos Kiayias and Prof. Vanessa Teague. After
+discussing the changes made to batching and the issues that arise from malicious parties
+being able to vote multiple times, we came to the following decisions:
+- Each party will be allowed to vote at most once,
+- "ledger" will be replaced by a "smart" bulletin board that (i) only allows one vote per
+  party and (ii) chooses the decryptors based on the algorithm of what is now the oracle
+  (thus the oracle will be made redundant), using a randomness beacon for the seed,
+- the notation for batches will become object- instead of index-based for clarity.
+
 ## 11/5/2021
 
 ### Democratic Decisionmaking
