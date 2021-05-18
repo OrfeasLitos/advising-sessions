@@ -1,3 +1,28 @@
+## 11/5/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Prof. Aggelos Kiayias, during which we focussed solely
+on the functionality, p. 5. In particular, we:
+- on Vote:
+  - got rid of getDecryptors() and instead allowed the adversary to choose them,
+  - added the "Private" predicate which ensures that not too much privacy is lost. This
+    will have to be refined, but a first version is given in the relevant TODO,
+  - added "vid" (vote id) to each vote, so that the functionality can keep track of which
+    adversarial response corresponds to which vote,
+- on DrainBatch, we mostly fixed the half-baked mess that was the Choose() function, i.e.:
+  - used the deterministic, pure function Batch() for creating batches from the vector of
+    "votes" (also changed "votes" to be a vector instead of a set). We didn't define the
+    function, but it's the one we discussed last time, with the lexicographic order,
+  - had the functionality choose the minimal undrained batch that includes the party that
+    activated the functionality (if any),
+  - if that batch is now complete, then the functionality adds the votes to the result
+    (this also takes advantage of vid).
+
+Some of the things we discussed are slightly changed now, so that the implementation make
+sense. E.g. I'm not particularly happy that I added the two "Drained" predicates, but it
+was the simplest way I could find.
+
 ## 28/4-7/5/2021
 
 ### Elmo
