@@ -1,3 +1,44 @@
+## 13/7/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Prof. Kiayias and Prof. Teague. We discussed
+privacy and liveness theorems, the newest decryptors & votebox functionalities
+and their realisation as smart contracts. The next steps are to simplify and
+unify the smart contract components, ensure that all parties have submitted
+their public keys before commencing the voting, move voter selection back to the
+control of the environment and use the hypergeometric distribution and its tail
+bounds to calculate the probability of a bad event more formally.
+
+## 29/6/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Prof. Kiayias and Prof. Teague. We discussed
+the difficulty of analysing the probability of a bad event under the current
+decryptor selection method and Prof. Kiayias proposed a new approach: on every
+vote, flip a coin. On heads, choose n decryptors uniformly at random. On tails,
+deterministically choose n decryptors such that it contributes to the completion
+of the "first" batch (according to some metric we should fix).
+
+## 22/6/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Prof. Kiayias and Prof. Teague. Due to the
+difficulty of finding the probability of a bad event under the previous
+decryptor selection scheme, we simplified the decryptor selection method so that
+the same party can be chosen as decryptor multiple times.
+
+## 1/6/2021
+
+### Democratic Decisionmaking
+
+Today we had an 1-hour meeting with Prof. Kiayias and Prof. Teague. We discussed
+various ways of modelling decryptor selection as draws from an urn, along with
+whether the calculation of the probability of a bad event is tractable under
+each urn model.
+
 ## 18/5/2021
 
 ### Democratic Decisionmaking
